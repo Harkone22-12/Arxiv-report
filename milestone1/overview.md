@@ -1,5 +1,7 @@
 # Crawling architecture
 
+*Author: La Anh Hào · code: `src/05_run_pipeline.ipynb`*
+
 ## Pipeline
 
 The crawl is one notebook, `src/05_run_pipeline.ipynb`, run on Google Colab (CPU). It loads the

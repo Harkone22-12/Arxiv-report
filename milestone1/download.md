@@ -1,5 +1,7 @@
 # Source download
 
+*Author: Võ Nguyễn Vân Anh · code: `src/02_download.ipynb`*
+
 Every version of every discovered paper is downloaded from the arXiv source mirror, unpacked, and reduced
 to its `.tex` and `.bib` files. Code: `src/02_download.ipynb` (`SourceClient`, `extract_source`,
 `download_sources`), tested by 27 offline tests in the same notebook.
