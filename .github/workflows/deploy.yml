@@ -4,7 +4,7 @@ on:
     branches: [main]
   workflow_dispatch:
 env:
-  BASE_URL: /${{ github.event.repository.name }}
+  BASE_URL: https://harkone22-12.github.io/Arxiv-report/
 permissions:
   contents: read
   pages: write
