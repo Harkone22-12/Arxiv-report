@@ -4,7 +4,7 @@
 
 Every version of every discovered paper is downloaded from the arXiv source mirror, unpacked, and reduced
 to its `.tex` and `.bib` files. Code: `src/02_download.ipynb` (`SourceClient`, `extract_source`,
-`download_sources`), tested by 27 offline tests in the same notebook.
+`download_sources`), tested by 46 offline tests in the same notebook.
 
 ## Requests
 
@@ -12,8 +12,22 @@ to its `.tex` and `.bib` files. Code: `src/02_download.ipynb` (`SourceClient`, `
   from `v1` to the latest. Automated downloads never go to `arxiv.org`.
 - One connection, at least **3 s** between request starts (`ARXIV_DELAY`). Retries go through the same
   gate, so they never break the pacing.
-- HTTP 429 and 5xx are retried (up to 4 attempts); the next request waits at least `2^attempt` seconds or
-  the server's `Retry-After`, whichever is longer. A 404 is not retried.
+- A 404 or another 4xx is not retried: the version is marked failed (and asked again in the next run).
+- HTTP 429 (arXiv's rate limit: `Rate exceeded.` per IP over a short window, and Colab IPs are shared), HTTP
+  5xx, a timeout or a connection lost before any byte arrived is not a problem of the version, so it is not
+  marked failed and is **never retried at once**. After that one request the crawl moves on to the next
+  version and puts the refused one back at the end of the same run (up to 3 times; after that it waits for the
+  next run). The next request often succeeds, so the crawl keeps downloading instead of waiting on one version.
+  The spacing stays `ARXIV_DELAY` (3 s): a 429 does not slow the crawl down.
+  No cooldown either: only a `Retry-After` sent by arXiv is honoured, and after 50 in a row the run stops with a message to switch runtime: that IP is rate-limited.
+- The one retry in place: arXiv often cuts long transfers (`IncompleteRead`). When part of the file has
+  arrived and the server sent an `ETag`, the retry asks only for the missing bytes with an HTTP `Range`
+  request, guarded by `If-Range` on the `ETag` (a changed file starts over), instead of the whole archive
+  again (moving on would throw those bytes away).
+- When such a cut transfer still fails after its last attempt (4), the next
+  request waits a cooldown: 10 s, doubled after each such failure up to 60 s, reset by the next successful
+  download. A period of throttling then costs a few pauses instead of dozens of failed versions to redo later;
+  a normal download never waits for it.
 - The archive is streamed in 1 MB blocks to the runtime's **local disk** (`/tmp`), not to Google Drive.
 
 ## What a source can be, and what is kept
@@ -64,10 +78,25 @@ A free Colab session lasts at most about 12 hours, and the full crawl needs more
   `state/download/receipts/<id>/vN.json`, also appended to the index `state/download/receipts.jsonl`.
 - A version is written to a staging folder and renamed into place only when complete, so an interrupted
   version is never mistaken for a finished one.
-- At start-up the index is read once and the saved files are checked against it by size (or by SHA-256
-  with `DOWNLOAD_VERIFY = "sha256"`); this takes seconds, not a re-hash of the whole corpus.
+- At start-up the index is read once and trusted (`DOWNLOAD_VERIFY = "receipt"`), because a receipt is written
+  only after its version was renamed into place; this takes seconds. Checking the saved files themselves costs
+  ~17 Drive calls per version (about 10-30 ms each), hours for the whole corpus, so `"size"` (sizes) and
+  `"sha256"` (re-hash) are for an occasional full check, e.g. after a session Colab killed before Drive synced.
 - Stopping the cell lets the archives already fetched be processed before it exits. A failed version is
   written to `errors.jsonl` and downloaded again on the next run.
+- Every request is logged in `attempts.jsonl` before it is sent, so each run starts with the versions never
+  requested. Versions requested before but not finished (404, throttled, cut, or the run was stopped or killed
+  mid-download) come after them, the least-tried first, so a new session does not open with the same failures.
+
+**Failures that would hit every version.** The run stops early, with the reason, instead of failing (and
+requesting) every remaining version: at once on a storage error (Google Drive or the local disk full, Drive
+unmounted), and after 20 failed versions in a row (arXiv, the network or Drive down). An HTTP 404/410 (arXiv
+has no source for that version, e.g. a withdrawn one) does not count: those versions are retried in a row at the end
+of a run, and counting them would stop it. Before the first request
+it checks that Drive and `/tmp` have room for the rest of the crawl. Staging folders left by a killed run are
+removed at start-up. A lock file with a heartbeat (`pipeline.lock`, `download.lock`) refuses a second runtime
+working on the same Drive folder, and is taken over once the other runtime has been gone for 3 minutes. At
+the end of a session the pipeline flushes Google Drive, whose writes are asynchronous.
 
 ## Progress and logs
 
@@ -76,3 +105,26 @@ the remaining time) and the file being downloaded (its size and the MB left). Th
 `progress.json`, `run_summary.json`, `run_history.jsonl` and `papers.csv` (one row per paper: versions,
 sizes before and after, status, time) to `state/download/`; the pipeline turns them into the
 [statistics](statistics.ipynb) and the [benchmark](performance.ipynb).
+
+Two more files there record what went wrong, one JSON line per event:
+
+- `errors.jsonl`: a version that **failed** (it is asked for again in the next run);
+- `throttles.jsonl`: a request arXiv **refused** (HTTP 429/5xx) or did not answer; not a failure of the
+  version, which goes back to the end of the queue.
+
+Every line carries `arxiv_id`, `version`, the HTTP `status` (or `null`), the time and an `error_kind` label,
+set by `error_kind()` in `02_download.ipynb`:
+
+| `error_kind` | Meaning | File |
+|---|---|---|
+| `HTTP_429`, `HTTP_5XX` | arXiv rate-limited the IP or was busy | `throttles.jsonl` |
+| `TIMEOUT`, `NO_CONNECTION` | no answer, or the connection was lost before any byte arrived | `throttles.jsonl` |
+| `NOT_FOUND` | HTTP 404/410: arXiv has no source for this version (e.g. withdrawn) | `errors.jsonl` |
+| `HTTP_<code>` | another HTTP 4xx (e.g. `HTTP_403`) | `errors.jsonl` |
+| `TRANSFER_CUT` | a transfer cut midway that still failed after its `Range` retries | `errors.jsonl` |
+| `EMPTY_RESPONSE`, `MARKUP_RESPONSE` | an empty body, or an HTML/JSON error page served with HTTP 200 | `errors.jsonl` |
+| `CORRUPT_ARCHIVE` | an archive that cannot be unpacked (broken TAR, ZIP, gzip or xz data) | `errors.jsonl` |
+| `REJECTED_ARCHIVE` | an unsafe path, a link or special file, or a text file over 128 MB | `errors.jsonl` |
+| `STORAGE`, `IO_ERROR` | Google Drive or the local disk full or unmounted, another file-system error | `errors.jsonl` |
+
+Lines written before this label existed have only `error` (the exception text).
