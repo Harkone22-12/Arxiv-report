@@ -6,16 +6,21 @@ project:
     - name: Võ Nguyễn Vân Anh - 24127016
     - name: Lưu Minh Quân - 24127223
     - name: Phạm Tấn Nhật Thịnh - 24127244
-  github: https://github.com/Harkone22-12/arxiv-report
+  github: https://github.com/Harkone22-12/Arxiv-report
   toc:
     - file: intro.md
     - title: Milestone 1 - Data Crawling
       children:
         - file: milestone1/overview.md
-        - file: milestone1/discovery.md
-        - file: milestone1/download.md
-        - file: milestone1/references.md
+        - title: 2. Implementation
+          children:
+            - file: milestone1/discovery.md
+            - file: milestone1/download.md
+            - file: milestone1/extraction.md
+            - file: milestone1/references.md
+            - file: milestone1/tools.md
         - file: milestone1/statistics.ipynb
         - file: milestone1/performance.ipynb
+        - file: milestone1/conclusion.ipynb
 site:
   template: book-theme

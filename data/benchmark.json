@@ -1,6 +1,6 @@
 {
-  "computed_at": "2026-11-06T03:06:10.276557+00:00",
-  "sessions": 29,
+  "computed_at": "2026-11-09T09:06:17.083784+00:00",
+  "sessions": 30,
   "ids_assigned": 20000,
   "papers_on_arxiv": 20000,
   "versions_total": 27035,
@@ -19,11 +19,11 @@
   "avg_references_per_paper": 36.23,
   "avg_arxiv_references_per_paper": 19.19,
   "discovery_seconds": 967.63,
-  "wall_seconds_total": 189154.43,
-  "avg_seconds_per_paper_end_to_end": 9.458,
+  "wall_seconds_total": 189770.98,
+  "avg_seconds_per_paper_end_to_end": 9.489,
   "paper_download_seconds_median": 3.932,
   "ram_peak_mb": 1106.51,
-  "ram_avg_mb": 489.41,
+  "ram_avg_mb": 489.4,
   "max_disk_bytes": 5451375175,
   "final_output_bytes": 5100966522
 }

@@ -1,0 +1,24 @@
+{
+  "papers": 20000,
+  "paper_status": {
+    "ok": 19989,
+    "not_found": 11
+  },
+  "references_total": 724139,
+  "references_dropped": 0,
+  "fields_present": {
+    "ref_title": 724139,
+    "ref_authors": 638047,
+    "ref_submission_date": 666411,
+    "ref_s2_id": 640451,
+    "ref_arxiv_id": 383562,
+    "arxiv_id_old_style": 14828,
+    "doi": 584985,
+    "venue": 557343
+  },
+  "date_source": {
+    "publicationDate": 586989,
+    "none": 57728,
+    "year": 79422
+  }
+}

@@ -1,11 +1,61 @@
-# Crawling architecture
+# 1. Overview
 
 *Author: La Anh Hào · code: `src/05_run_pipeline.ipynb`*
 
-## Pipeline
+## 1.1 Goal and scope
 
-The crawl is one notebook, `src/05_run_pipeline.ipynb`, run on Google Colab (CPU). It loads the
-notebooks of the four members with `%run -i` and runs three stages:
+Milestone 1 builds the raw corpus that the next two milestones work on. For the **20,000 arXiv IDs**
+assigned to the group, the scraper must find every paper and all of its versions, download the LaTeX source
+of each version, keep only the text files, and collect the metadata of the papers and of the works they
+cite.
+
+The four assigned ranges hold 5,000 IDs each (both ends inclusive) and are listed in `ID_RANGES` in
+`src/00_config.ipynb`. The report refers to them as R1–R4:
+
+| | Range | IDs | ID prefix |
+|---|---|---:|---|
+| R1 | `2609.32834` – `2609.37833` | 5,000 | September 2026 |
+| R2 | `2605.17338` – `2605.22337` | 5,000 | May 2026 |
+| R3 | `2605.07338` – `2605.12337` | 5,000 | May 2026 |
+| R4 | `2603.20580` – `2603.25579` | 5,000 | March 2026 |
+
+The work has four parts, each described in its own section of chapter 2:
+
+1. **Entry discovery** ([2.1](discovery.md)). Resolve each assigned ID with the arXiv API: does the paper
+   exist, how many versions does it have, and what are the title, authors, dates and venue of every version.
+   Harvesting the whole repository (OAI-PMH, the Kaggle snapshot) is outside the scope of the milestone and
+   was not needed.
+2. **Source download** ([2.2](download.md)). Request every version, `v1` to the latest, from the source
+   mirror `export.arxiv.org`, one connection at a time and at least 3 s apart.
+3. **Extraction and figure removal** ([2.3](extraction.md)). Unpack whatever arXiv returns and keep only the
+   `.tex` and `.bib` files, byte for byte and with their folder structure. A version without LaTeX source
+   keeps an empty record.
+4. **Reference metadata** ([2.4](references.md)). Fetch the reference list of every paper from the Semantic
+   Scholar API and keep all references locally, flagging the ones that have an arXiv ID.
+
+Chapter [3](statistics.ipynb) reports what was collected, chapter [4](performance.ipynb) how fast and with
+how much memory and disk, and chapter [5](conclusion.ipynb) the conclusions and limitations.
+
+## 1.2 Requirements of the statement and where they are met
+
+| Requirement of the statement | How the scraper meets it | Described in |
+|---|---|---|
+| Crawl **every version** of each paper; a single-submission paper uses `v1` | discovery reads the number of versions from the versioned ID of the latest version; the downloader requests `/src/{id}v{N}` for every `N` | [2.1](discovery.md), [2.2](download.md) |
+| Use the `export.arxiv.org` mirror, a descriptive User-Agent, one connection, 3 s between requests | one `requests` session, a gate that spaces the *starts* of all requests (retries included) by `ARXIV_DELAY = 3.0` s | [2.2](download.md) |
+| Keep **only `.tex` and `.bib`** files, by extraction; no figure binaries | the extractor writes only members with these two extensions; the archive is deleted after unpacking | [2.3](extraction.md) |
+| Leave `figure` environments and `\includegraphics` untouched | the kept files are copied byte for byte; nothing in the TeX is edited | [2.3](extraction.md) |
+| A version with no LaTeX source keeps an empty record | empty `vN/` folder and an `empty_source` receipt | [2.3](extraction.md) |
+| Paper metadata for each version (title, authors, dates, venue) | `metadata.json` with one `version_info` record per version | [2.1](discovery.md) |
+| Reference metadata from Semantic Scholar; keep all references, only arXiv-keyed ones become `references` rows | batch endpoint with flat fields; `references.json` keeps everything, `references_rows()` filters on the arXiv ID | [2.4](references.md) |
+| Tables `papers` and `references` with the given columns | `papers_rows()` and `references_rows()` build them from the saved files | [1.5](#tables) |
+| Report statistics: papers scraped, success rate, size before/after, references per paper, reference success rate | computed from the crawl's logs when the book is built | [3](statistics.ipynb) |
+| Report performance: time per paper, average, discovery time, peak and average RAM, maximum disk, output size, measured on CPU-only Colab | session records, receipts and a `psutil` monitor thread | [4](performance.ipynb) |
+| Figures and tables generated at compilation, no screenshots | chapters 3–5 are notebooks executed by the build | [3](statistics.ipynb), [4](performance.ipynb) |
+
+## 1.3 Pipeline
+
+The crawl is one notebook, `src/05_run_pipeline.ipynb`, run on Google Colab (CPU). It loads the notebooks of
+the four members with `%run -i` and runs three stages:
 
 ```text
 [setup]      clone/update the repository, install src/requirements.txt, mount Google Drive,
@@ -26,46 +76,26 @@ notebooks of the four members with `%run -i` and runs three stages:
        logs/papers.csv, logs/benchmark.json (all sessions), logs/performance.json, logs/figures/
 ```
 
-The arXiv limit and the Semantic Scholar limit are independent, so the references are fetched while
-the downloader waits for arXiv. Every stage resumes from what is saved on Drive: after a Colab disconnect
-the notebook is simply run again (see *Resuming after a disconnect* in [Source download](download.md)).
+Three design decisions shape everything else:
 
-`src/06_test_100_versions.ipynb` runs the same pipeline on the first 100 source versions only, in a
-separate folder, and checks the result; it was used to test every change before the full crawl.
+- **Batch whatever the service lets us batch.** The 3 s interval of arXiv is per request, not per paper, so
+  discovery asks for 100 IDs per call and the references for 100 papers per call. Only the sources need one
+  request per version.
+- **Never let our own work add to the request interval.** Unpacking and the slow writes to Google Drive run
+  in worker threads while the main thread waits for its next request slot, and the references run on a
+  separate thread against a different service with its own rate limit.
+- **Every stage resumes from what is on Drive.** A free Colab session ends after some hours and the crawl
+  needs many of them, so each finished batch and each finished version leaves a checkpoint, and running the
+  notebook again continues where the last session stopped.
 
-## Tools and libraries
+`src/06_test_100_versions.ipynb` runs the same pipeline on the first 100 source versions only, in a separate
+folder, and checks the result; every change was tested with it before the full crawl.
 
-| Purpose | Tool |
-|---|---|
-| entry discovery, paper metadata | arXiv API through the `arxiv` library 4.x (`Client.results(Search(id_list=...))`) |
-| LaTeX sources | `requests` on the source mirror `https://export.arxiv.org/src/{id}vN` |
-| unpacking | Python standard library: `tarfile`, `zipfile`, `gzip`, `bz2`, `lzma` |
-| reference metadata | Semantic Scholar Graph API, `POST /graph/v1/paper/batch` (with an API key) |
-| concurrency | `concurrent.futures.ThreadPoolExecutor` (extraction workers, reference thread) |
-| monitoring | `psutil` (RSS), wall clock, disk usage from the receipts (or a `du`-style walk with `MEASURE_DISK = True`) |
-| progress | `tqdm` bars (discovery, papers, current file and MB left) |
-| analysis, figures | `pandas`, `matplotlib` |
+## 1.4 Data layout
 
-OAI-PMH was not needed: the arXiv API already returns every version's metadata when it is asked for the
-versioned IDs (see [Entry discovery](discovery.md)).
-
-## Rate limits and politeness
-
-- **arXiv (API and `/src/`)**: one connection, at least **3 s** between requests (`ARXIV_DELAY = 3.0`),
-  retries included, and a descriptive `User-Agent`. Automated downloads go to `export.arxiv.org`, never to
-  `arxiv.org`. On HTTP 429, discovery waits 30 s, doubling each time (see [Entry discovery](discovery.md));
-  the source downloader does not retry a refused version at once but moves on and asks for it again later,
-  honouring a `Retry-After` from arXiv (see [Source download](download.md)).
-- **Semantic Scholar**: an API key, at most one request every `S2_DELAY` seconds, exponential back-off on
-  HTTP 429. Even with the key, a large share of requests is refused with 429 at any spacing (see
-  [References](references.md)), so the client sends few, large requests: batches of 100 papers, about 200
-  requests for the whole range.
-
-## Data layout
-
-The corpus follows the convention suggested by the lab book: one folder per paper named after its ID
-with the dot replaced by a hyphen, containing the `.tex` and `.bib` files of every version and the
-metadata of the paper and of its references.
+The corpus follows the convention suggested by the statement: one folder per paper, named after its ID with
+the dot replaced by a hyphen, containing the `.tex` and `.bib` files of every version and the metadata of
+the paper and of its references.
 
 ```text
 MyDrive/arxiv-project/
@@ -74,13 +104,16 @@ MyDrive/arxiv-project/
 │       ├── metadata.json        paper metadata, one record per version (title, authors, dates, venue, ...)
 │       ├── references.json      every reference found by Semantic Scholar (not only arXiv ones)
 │       ├── v1/                  .tex and .bib files of version 1, original folder structure kept
-│       └── v2/                  ... one folder per version; empty if the version is PDF-only
+│       └── v2/                  ... one folder per version; empty if the version has no LaTeX source
 ├── state/                       resume state: discovery manifest and batches, download receipts, errors
 └── logs/                        papers.csv, references.csv, benchmark.json, performance.json, figures/
 ```
 
-A version without LaTeX source (PDF or Word only) keeps an **empty** `vN/` folder and an `empty_source`
-receipt, so the paper stays in the corpus, as the lab book asks.
+No data file is committed to the code repository; the corpus lives on Google Drive, and only the small log
+files that this report is built from are copied to the report repository.
+
+(tables)=
+## 1.5 Dataset tables
 
 ### Table `papers`
 
