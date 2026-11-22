@@ -22,5 +22,18 @@ project:
         - file: milestone1/statistics.ipynb
         - file: milestone1/performance.ipynb
         - file: milestone1/conclusion.ipynb
+    - title: Milestone 2 - Parsing and Standardization
+      children:
+        - file: milestone2/overview.md
+        - title: 2. Implementation
+          children:
+            - file: milestone2/hierarchy.md
+            - file: milestone2/normalization.md
+            - file: milestone2/references.md
+            - file: milestone2/deduplication.ipynb
+            - file: milestone2/running.md
+        - file: milestone2/statistics.ipynb
+        - file: milestone2/performance.ipynb
+        - file: milestone2/conclusion.ipynb
 site:
   template: book-theme
