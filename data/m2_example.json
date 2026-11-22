@@ -1,0 +1,2063 @@
+{
+ "arxiv_id": "2603.21809",
+ "folder_id": "2603-21809",
+ "parser_version": "13.7|10:team|11:team|12:team",
+ "versions": [
+  {
+   "version": 1,
+   "status": "ok",
+   "bib_source": "bib",
+   "n_nodes": 140,
+   "error": ""
+  },
+  {
+   "version": 2,
+   "status": "ok",
+   "bib_source": "bib",
+   "n_nodes": 138,
+   "error": ""
+  }
+ ],
+ "trees": {
+  "1": [
+   "2603-21809#doc",
+   [
+    "2603-21809#s1"
+   ],
+   [
+    "2603-21809#s2"
+   ],
+   [
+    "2603-21809#abs1",
+    [
+     "2603-21809#s3"
+    ],
+    [
+     "2603-21809#s4"
+    ],
+    [
+     "2603-21809#s5"
+    ],
+    [
+     "2603-21809#s6"
+    ],
+    [
+     "2603-21809#s7"
+    ],
+    [
+     "2603-21809#s8"
+    ],
+    [
+     "2603-21809#s9"
+    ],
+    [
+     "2603-21809#s10"
+    ],
+    [
+     "2603-21809#s11"
+    ]
+   ],
+   [
+    "2603-21809#sec1",
+    [
+     "2603-21809#s12"
+    ],
+    [
+     "2603-21809#s13"
+    ],
+    [
+     "2603-21809#s14"
+    ],
+    [
+     "2603-21809#s15"
+    ],
+    [
+     "2603-21809#s16"
+    ],
+    [
+     "2603-21809#s17"
+    ],
+    [
+     "2603-21809#s18"
+    ],
+    [
+     "2603-21809#s19"
+    ],
+    [
+     "2603-21809#s20"
+    ],
+    [
+     "2603-21809#s21"
+    ],
+    [
+     "2603-21809#s22"
+    ],
+    [
+     "2603-21809#s23"
+    ],
+    [
+     "2603-21809#s24"
+    ],
+    [
+     "2603-21809#s25"
+    ],
+    [
+     "2603-21809#s26"
+    ],
+    [
+     "2603-21809#s27"
+    ],
+    [
+     "2603-21809#s28"
+    ],
+    [
+     "2603-21809#s29"
+    ],
+    [
+     "2603-21809#s30"
+    ],
+    [
+     "2603-21809#s31"
+    ],
+    [
+     "2603-21809#s32"
+    ],
+    [
+     "2603-21809#s33"
+    ],
+    [
+     "2603-21809#list1",
+     [
+      "2603-21809#item1",
+      [
+       "2603-21809#s34"
+      ]
+     ],
+     [
+      "2603-21809#item2",
+      [
+       "2603-21809#s35"
+      ]
+     ],
+     [
+      "2603-21809#item3",
+      [
+       "2603-21809#s36"
+      ]
+     ]
+    ]
+   ],
+   [
+    "2603-21809#sec2",
+    [
+     "2603-21809#s37"
+    ],
+    [
+     "2603-21809#s38"
+    ],
+    [
+     "2603-21809#s39"
+    ],
+    [
+     "2603-21809#s40"
+    ],
+    [
+     "2603-21809#s41"
+    ],
+    [
+     "2603-21809#s42"
+    ],
+    [
+     "2603-21809#fig1"
+    ],
+    [
+     "2603-21809#ssec1",
+     [
+      "2603-21809#s43"
+     ],
+     [
+      "2603-21809#s44"
+     ],
+     [
+      "2603-21809#s45"
+     ],
+     [
+      "2603-21809#s46"
+     ],
+     [
+      "2603-21809#s47"
+     ],
+     [
+      "2603-21809#eq1"
+     ],
+     [
+      "2603-21809#s48"
+     ],
+     [
+      "2603-21809#eq2"
+     ],
+     [
+      "2603-21809#s49"
+     ],
+     [
+      "2603-21809#s50"
+     ],
+     [
+      "2603-21809#s51"
+     ]
+    ],
+    [
+     "2603-21809#ssec2",
+     [
+      "2603-21809#s52"
+     ],
+     [
+      "2603-21809#s53"
+     ],
+     [
+      "2603-21809#s54"
+     ],
+     [
+      "2603-21809#eq3"
+     ],
+     [
+      "2603-21809#s55"
+     ],
+     [
+      "2603-21809#s56"
+     ],
+     [
+      "2603-21809#s57"
+     ],
+     [
+      "2603-21809#eq4"
+     ],
+     [
+      "2603-21809#s58"
+     ],
+     [
+      "2603-21809#s59"
+     ],
+     [
+      "2603-21809#s60"
+     ]
+    ],
+    [
+     "2603-21809#ssec3",
+     [
+      "2603-21809#s61"
+     ],
+     [
+      "2603-21809#s62"
+     ],
+     [
+      "2603-21809#s63"
+     ],
+     [
+      "2603-21809#s64"
+     ],
+     [
+      "2603-21809#eq5"
+     ],
+     [
+      "2603-21809#s65"
+     ],
+     [
+      "2603-21809#s66"
+     ],
+     [
+      "2603-21809#s67"
+     ],
+     [
+      "2603-21809#s68"
+     ],
+     [
+      "2603-21809#eq6"
+     ],
+     [
+      "2603-21809#s69"
+     ],
+     [
+      "2603-21809#s70"
+     ],
+     [
+      "2603-21809#s71"
+     ],
+     [
+      "2603-21809#s72"
+     ],
+     [
+      "2603-21809#s73"
+     ],
+     [
+      "2603-21809#eq7"
+     ],
+     [
+      "2603-21809#s74"
+     ],
+     [
+      "2603-21809#eq8"
+     ],
+     [
+      "2603-21809#s75"
+     ],
+     [
+      "2603-21809#s76"
+     ],
+     [
+      "2603-21809#s77"
+     ],
+     [
+      "2603-21809#s78"
+     ],
+     [
+      "2603-21809#s79"
+     ],
+     [
+      "2603-21809#eq9"
+     ],
+     [
+      "2603-21809#s80"
+     ]
+    ]
+   ],
+   [
+    "2603-21809#sec3",
+    [
+     "2603-21809#s81"
+    ],
+    [
+     "2603-21809#s82"
+    ],
+    [
+     "2603-21809#s83"
+    ],
+    [
+     "2603-21809#s84"
+    ],
+    [
+     "2603-21809#s85"
+    ],
+    [
+     "2603-21809#s86"
+    ],
+    [
+     "2603-21809#s87"
+    ],
+    [
+     "2603-21809#s88"
+    ],
+    [
+     "2603-21809#s89"
+    ],
+    [
+     "2603-21809#s90"
+    ],
+    [
+     "2603-21809#s91"
+    ],
+    [
+     "2603-21809#s92"
+    ]
+   ],
+   [
+    "2603-21809#sec4",
+    [
+     "2603-21809#s93"
+    ],
+    [
+     "2603-21809#s94"
+    ],
+    [
+     "2603-21809#s95"
+    ],
+    [
+     "2603-21809#s96"
+    ],
+    [
+     "2603-21809#s97"
+    ],
+    [
+     "2603-21809#fig2"
+    ],
+    [
+     "2603-21809#fig3"
+    ],
+    [
+     "2603-21809#s98"
+    ],
+    [
+     "2603-21809#s99"
+    ],
+    [
+     "2603-21809#s100"
+    ],
+    [
+     "2603-21809#s101"
+    ],
+    [
+     "2603-21809#s102"
+    ],
+    [
+     "2603-21809#s103"
+    ],
+    [
+     "2603-21809#fig4"
+    ],
+    [
+     "2603-21809#s104"
+    ],
+    [
+     "2603-21809#s105"
+    ],
+    [
+     "2603-21809#s106"
+    ],
+    [
+     "2603-21809#s107"
+    ]
+   ],
+   [
+    "2603-21809#sec5",
+    [
+     "2603-21809#s108"
+    ],
+    [
+     "2603-21809#s109"
+    ],
+    [
+     "2603-21809#s110"
+    ],
+    [
+     "2603-21809#s111"
+    ],
+    [
+     "2603-21809#sssec1",
+     [
+      "2603-21809#s112"
+     ]
+    ]
+   ]
+  ],
+  "2": [
+   "2603-21809#doc",
+   [
+    "2603-21809#s1"
+   ],
+   [
+    "2603-21809#s113"
+   ],
+   [
+    "2603-21809#abs1",
+    [
+     "2603-21809#s3"
+    ],
+    [
+     "2603-21809#s4"
+    ],
+    [
+     "2603-21809#s5"
+    ],
+    [
+     "2603-21809#s6"
+    ],
+    [
+     "2603-21809#s7"
+    ],
+    [
+     "2603-21809#s8"
+    ],
+    [
+     "2603-21809#s9"
+    ],
+    [
+     "2603-21809#s10"
+    ],
+    [
+     "2603-21809#s114"
+    ]
+   ],
+   [
+    "2603-21809#sec1",
+    [
+     "2603-21809#s12"
+    ],
+    [
+     "2603-21809#s14"
+    ],
+    [
+     "2603-21809#s15"
+    ],
+    [
+     "2603-21809#s16"
+    ],
+    [
+     "2603-21809#s115"
+    ],
+    [
+     "2603-21809#s116"
+    ],
+    [
+     "2603-21809#s117"
+    ],
+    [
+     "2603-21809#s118"
+    ],
+    [
+     "2603-21809#s119"
+    ],
+    [
+     "2603-21809#s120"
+    ],
+    [
+     "2603-21809#s24"
+    ],
+    [
+     "2603-21809#s121"
+    ],
+    [
+     "2603-21809#s122"
+    ],
+    [
+     "2603-21809#s123"
+    ],
+    [
+     "2603-21809#s124"
+    ],
+    [
+     "2603-21809#s125"
+    ],
+    [
+     "2603-21809#s126"
+    ],
+    [
+     "2603-21809#list1",
+     [
+      "2603-21809#item1",
+      [
+       "2603-21809#s127"
+      ]
+     ],
+     [
+      "2603-21809#item2",
+      [
+       "2603-21809#s128"
+      ]
+     ],
+     [
+      "2603-21809#item3",
+      [
+       "2603-21809#s36"
+      ]
+     ]
+    ]
+   ],
+   [
+    "2603-21809#sec2",
+    [
+     "2603-21809#s129"
+    ],
+    [
+     "2603-21809#s130"
+    ],
+    [
+     "2603-21809#s131"
+    ],
+    [
+     "2603-21809#s132"
+    ],
+    [
+     "2603-21809#fig5"
+    ],
+    [
+     "2603-21809#ssec1",
+     [
+      "2603-21809#s43"
+     ],
+     [
+      "2603-21809#s44"
+     ],
+     [
+      "2603-21809#s133"
+     ],
+     [
+      "2603-21809#s134"
+     ],
+     [
+      "2603-21809#s47"
+     ],
+     [
+      "2603-21809#eq1"
+     ],
+     [
+      "2603-21809#s48"
+     ],
+     [
+      "2603-21809#eq2"
+     ],
+     [
+      "2603-21809#s49"
+     ],
+     [
+      "2603-21809#s135"
+     ]
+    ],
+    [
+     "2603-21809#ssec2",
+     [
+      "2603-21809#s52"
+     ],
+     [
+      "2603-21809#s53"
+     ],
+     [
+      "2603-21809#s54"
+     ],
+     [
+      "2603-21809#eq3"
+     ],
+     [
+      "2603-21809#s136"
+     ],
+     [
+      "2603-21809#s137"
+     ],
+     [
+      "2603-21809#eq10"
+     ],
+     [
+      "2603-21809#s138"
+     ]
+    ],
+    [
+     "2603-21809#ssec4",
+     [
+      "2603-21809#s61"
+     ],
+     [
+      "2603-21809#s62"
+     ],
+     [
+      "2603-21809#s63"
+     ],
+     [
+      "2603-21809#s64"
+     ],
+     [
+      "2603-21809#eq5"
+     ],
+     [
+      "2603-21809#s139"
+     ],
+     [
+      "2603-21809#s67"
+     ],
+     [
+      "2603-21809#s68"
+     ],
+     [
+      "2603-21809#eq6"
+     ],
+     [
+      "2603-21809#s140"
+     ],
+     [
+      "2603-21809#s141"
+     ],
+     [
+      "2603-21809#s71"
+     ],
+     [
+      "2603-21809#s72"
+     ],
+     [
+      "2603-21809#s73"
+     ],
+     [
+      "2603-21809#eq7"
+     ],
+     [
+      "2603-21809#s74"
+     ],
+     [
+      "2603-21809#eq8"
+     ],
+     [
+      "2603-21809#s75"
+     ],
+     [
+      "2603-21809#s76"
+     ],
+     [
+      "2603-21809#s142"
+     ],
+     [
+      "2603-21809#s143"
+     ],
+     [
+      "2603-21809#s79"
+     ],
+     [
+      "2603-21809#eq9"
+     ]
+    ]
+   ],
+   [
+    "2603-21809#sec3",
+    [
+     "2603-21809#s81"
+    ],
+    [
+     "2603-21809#s144"
+    ],
+    [
+     "2603-21809#s145"
+    ],
+    [
+     "2603-21809#s146"
+    ],
+    [
+     "2603-21809#s147"
+    ],
+    [
+     "2603-21809#s148"
+    ],
+    [
+     "2603-21809#s85"
+    ],
+    [
+     "2603-21809#s86"
+    ],
+    [
+     "2603-21809#s87"
+    ],
+    [
+     "2603-21809#s88"
+    ],
+    [
+     "2603-21809#s149"
+    ],
+    [
+     "2603-21809#s90"
+    ],
+    [
+     "2603-21809#s150"
+    ],
+    [
+     "2603-21809#s151"
+    ],
+    [
+     "2603-21809#fig2"
+    ]
+   ],
+   [
+    "2603-21809#sec6",
+    [
+     "2603-21809#s93"
+    ],
+    [
+     "2603-21809#s94"
+    ],
+    [
+     "2603-21809#s152"
+    ],
+    [
+     "2603-21809#s153"
+    ],
+    [
+     "2603-21809#s154"
+    ],
+    [
+     "2603-21809#fig3"
+    ],
+    [
+     "2603-21809#s98"
+    ],
+    [
+     "2603-21809#s99"
+    ],
+    [
+     "2603-21809#s155"
+    ],
+    [
+     "2603-21809#s101"
+    ],
+    [
+     "2603-21809#s102"
+    ],
+    [
+     "2603-21809#s103"
+    ],
+    [
+     "2603-21809#fig4"
+    ],
+    [
+     "2603-21809#s156"
+    ],
+    [
+     "2603-21809#s157"
+    ],
+    [
+     "2603-21809#s105"
+    ],
+    [
+     "2603-21809#s158"
+    ],
+    [
+     "2603-21809#s159"
+    ],
+    [
+     "2603-21809#fig6"
+    ],
+    [
+     "2603-21809#s160"
+    ],
+    [
+     "2603-21809#s161"
+    ],
+    [
+     "2603-21809#s162"
+    ]
+   ],
+   [
+    "2603-21809#sec5",
+    [
+     "2603-21809#s163"
+    ],
+    [
+     "2603-21809#s164"
+    ],
+    [
+     "2603-21809#s165"
+    ],
+    [
+     "2603-21809#sssec2",
+     [
+      "2603-21809#s166"
+     ],
+     [
+      "2603-21809#s167"
+     ],
+     [
+      "2603-21809#s168"
+     ],
+     [
+      "2603-21809#s169"
+     ]
+    ],
+    [
+     "2603-21809#sssec1",
+     [
+      "2603-21809#s112"
+     ]
+    ]
+   ]
+  ]
+ },
+ "elements": {
+  "2603-21809#doc": [
+   "document",
+   "Clinical Graph-Mediated Distillation for Unpaired MRI-to-CFI Hypertension Prediction"
+  ],
+  "2603-21809#s1": [
+   "sentence",
+   "\\titlerunning{CGMD for Unpaired MRI-to-CFI Hypertension Prediction}"
+  ],
+  "2603-21809#s2": [
+   "sentence",
+   "\\authorrunning{D. Imans et al.} \\institute{ Department of Computer Science and Engineering\\\\ Sungkyunkwan University, Suwon, South Korea Research Convergence Institute\\\\ Sungkyunkwan University, Suwon, South Korea Department of AI Systems Engineering\\\\ Sungkyunkwan University, Suwon, South Korea Department of Electrical and Computer Engineering\\\\ Sungkyunkwan University, Suwon, South Korea \\\\ }"
+  ],
+  "2603-21809#abs1": [
+   "abstract",
+   "Abstract"
+  ],
+  "2603-21809#s3": [
+   "sentence",
+   "Retinal fundus imaging enables low-cost and scalable hypertension (HTN) screening, but HTN-related retinal cues are subtle, yielding high-variance predictions."
+  ],
+  "2603-21809#s4": [
+   "sentence",
+   "Brain MRI provides stronger vascular and small-vessel-disease markers of HTN, yet it is expensive and rarely acquired alongside fundus images, resulting in modality-siloed datasets with disjoint MRI and fundus cohorts."
+  ],
+  "2603-21809#s5": [
+   "sentence",
+   "We study this unpaired MRI - fundus regime and introduce Clinical Graph-Mediated Distillation (CGMD), a framework that transfers MRI-derived HTN knowledge to a fundus model without paired multimodal data."
+  ],
+  "2603-21809#s6": [
+   "sentence",
+   "CGMD leverages shared structured biomarkers as a bridge by constructing a clinical similarity $k$NN graph spanning both cohorts."
+  ],
+  "2603-21809#s7": [
+   "sentence",
+   "We train an MRI teacher, propagate its representations over the graph, and impute brain-informed representation targets for fundus patients."
+  ],
+  "2603-21809#s8": [
+   "sentence",
+   "A fundus student is then trained with a joint objective combining HTN supervision, target distillation, and relational distillation."
+  ],
+  "2603-21809#s9": [
+   "sentence",
+   "Experiments on our newly collected unpaired MRI - fundus - biomarker dataset show that CGMD consistently improves fundus-based HTN prediction over standard distillation and non-graph imputation baselines, with ablations confirming the importance of clinically grounded graph connectivity."
+  ],
+  "2603-21809#s10": [
+   "sentence",
+   "Code is available at \\url{https://github.com/DillanImans/CGMD-unpaired-distillation}."
+  ],
+  "2603-21809#s11": [
+   "sentence",
+   "\\keywords{Hypertension Cross-modal distillation Biomarker graphs.}"
+  ],
+  "2603-21809#sec1": [
+   "section",
+   "Introduction"
+  ],
+  "2603-21809#s12": [
+   "sentence",
+   "Cardiovascular diseases remain a leading cause of global morbidity and mortality, underscoring the need for scalable methods to identify individuals at elevated vascular risk early~\\cite{martin20242024}."
+  ],
+  "2603-21809#s13": [
+   "sentence",
+   "Advances in computational imaging have enabled imaging-based risk phenotyping, where medical images are used to infer cardiometabolic and vascular risk factors at scale."
+  ],
+  "2603-21809#s14": [
+   "sentence",
+   "High-fidelity modalities such as brain MRI can capture downstream injury patterns associated with chronic vascular risk and small-vessel disease~\\cite{hainsworth2024cerebral,sole2024impact}."
+  ],
+  "2603-21809#s15": [
+   "sentence",
+   "However, MRI is costly and unevenly available, limiting population-scale deployment, particularly in resource-constrained settings~\\cite{murali2024bringing,hricak2025strengthening}."
+  ],
+  "2603-21809#s16": [
+   "sentence",
+   "Retinal fundus imaging, by contrast, is inexpensive and widely deployable~\\cite{nakayama2025comprehensive}, but it provides an indirect and incomplete readout of vascular pathology."
+  ],
+  "2603-21809#s17": [
+   "sentence",
+   "HTN-related retinal cues are often subtle, heterogeneous, and confounded, leading to weak and high-variance signals that challenge robust inference~\\cite{poplin2018prediction,zhang2020prediction,tan2022new}."
+  ],
+  "2603-21809#s18": [
+   "sentence",
+   "A natural strategy is to transfer high-fidelity vascular signal from brain MRI to scalable retinal fundus imaging via cross-modal knowledge distillation, treating MRI as the teacher and fundus as the student."
+  ],
+  "2603-21809#s19": [
+   "sentence",
+   "However, most cross-modal distillation and representation-alignment methods implicitly assume paired multimodal data - i.e., both modalities are acquired for the same individual - so that the teacher can provide a sample-specific target (logits or features) for each student image."
+  ],
+  "2603-21809#s20": [
+   "sentence",
+   "In practice, paired MRI - fundus acquisitions are rarely available at scale: fundus imaging is routine and inexpensive, whereas MRI is resource-intensive and typically ordered under different clinical indications."
+  ],
+  "2603-21809#s21": [
+   "sentence",
+   "Consequently, obtaining both modalities often requires dedicated multimodality sub-studies rather than standard care pipelines~\\cite{sun2023protocol}."
+  ],
+  "2603-21809#s22": [
+   "sentence",
+   "This yields a disjoint multi-cohort regime in which the teacher modality is systematically missing for the student cohort, rendering conventional paired distillation inapplicable and limiting approaches that depend on a small paired subset."
+  ],
+  "2603-21809#s23": [
+   "sentence",
+   "These constraints motivate methods that can establish cross-cohort correspondence without co-acquisition, for example by leveraging shared structured clinical variables as a linking signal."
+  ],
+  "2603-21809#s24": [
+   "sentence",
+   "Related work falls into three categories."
+  ],
+  "2603-21809#s25": [
+   "sentence",
+   "First, paired cross-modal distillation~\\cite{zhao2020knowledge} assumes paired acquisitions so a teacher on a superior modality can provide per-instance targets to supervise a student on a weaker modality."
+  ],
+  "2603-21809#s26": [
+   "sentence",
+   "This assumption breaks when cohorts are disjoint and the superior modality is unavailable for the student cohort."
+  ],
+  "2603-21809#s27": [
+   "sentence",
+   "Second, unpaired distillation~\\cite{dou2020unpaired,jiang2021unpaired,yang2025umscs} uses modality-bridging translation or reconstruction to transfer supervision without one-to-one pairing, e.g., CMEDL~\\cite{jiang2021unpaired} for unpaired MRI$\\rightarrow$CT segmentation; these methods are largely tailored to closely related modalities of the same anatomy and do not address large modality gaps suc …"
+  ],
+  "2603-21809#s28": [
+   "sentence",
+   "Third, EHR-based patient similarity learning~\\cite{gu2022structure} constructs clinical similarity graphs from structured variables, but has not been used to generate patient-specific distillation targets for cross-modal transfer across disjoint cohorts."
+  ],
+  "2603-21809#s29": [
+   "sentence",
+   "To this end, we propose the Clinical Graph-Mediated Distillation (CGMD), a framework that transfers vascular representations from brain MRI to scalable retinal fundus imaging without paired acquisitions."
+  ],
+  "2603-21809#s30": [
+   "sentence",
+   "To the best of our knowledge, CGMD is the first distillation approach that supports cross-modal transfer across disjoint cohorts and anatomically distinct modalities (e.g., brain MRI$\\rightarrow$fundus) without subject-level correspondence."
+  ],
+  "2603-21809#s31": [
+   "sentence",
+   "CGMD constructs a clinically grounded similarity graph from shared structured biomarkers, trains an MRI teacher on the MRI cohort, and propagates teacher embeddings over the graph to impute patient-specific distillation targets for fundus subjects in a separate cohort."
+  ],
+  "2603-21809#s32": [
+   "sentence",
+   "A fundus student is then optimized with supervised HTN loss plus distillation to the imputed targets, enabling MRI-free deployment at inference."
+  ],
+  "2603-21809#s33": [
+   "sentence",
+   "In summary, our main contributions are three-fold:"
+  ],
+  "2603-21809#list1": [
+   "itemize",
+   ""
+  ],
+  "2603-21809#item1": [
+   "item",
+   ""
+  ],
+  "2603-21809#s34": [
+   "sentence",
+   "We formalize an unpaired, disjoint-cohort MRI - fundus transfer setting, where paired distillation is infeasible and synthesis-based alignment is ill-posed due to the large anatomical modality gap."
+  ],
+  "2603-21809#item2": [
+   "item",
+   ""
+  ],
+  "2603-21809#s35": [
+   "sentence",
+   "We propose Clinical Graph-Mediated Distillation (CGMD) framework that uses shared structured biomarkers to build a clinical similarity graph and propagate MRI teacher embeddings, producing patient-specific distillation targets for fundus training without paired acquisition."
+  ],
+  "2603-21809#item3": [
+   "item",
+   ""
+  ],
+  "2603-21809#s36": [
+   "sentence",
+   "On a newly collected unpaired MRI - fundus - biomarker dataset, CGMD consistently improves fundus-based HTN prediction over standard distillation and non-graph imputation baselines; ablations verify that clinically grounded graph connectivity is critical for effective cross-cohort transfer."
+  ],
+  "2603-21809#sec2": [
+   "section",
+   "Methodology"
+  ],
+  "2603-21809#s37": [
+   "sentence",
+   "Fig.~\\ref{fig1} overviews our cross-cohort graph-mediated distillation pipeline for transferring MRI-derived knowledge to fundus without paired subjects."
+  ],
+  "2603-21809#s38": [
+   "sentence",
+   "Given disjoint cohorts, an MRI set $\\mathcal{D}_B$ and a fundus set $\\mathcal{D}_F$, we train an MRI teacher on $\\mathcal{D}_B$ and extract patient embeddings."
+  ],
+  "2603-21809#s39": [
+   "sentence",
+   "Using shared clinical biomarkers, we construct a $k$NN graph over MRI patients and smooth the embeddings to obtain denoised teacher priors (Sec.~\\ref{sec:teacher_smoothing})."
+  ],
+  "2603-21809#s40": [
+   "sentence",
+   "For each fundus patient in $\\mathcal{D}_F$, we retrieve clinically nearest MRI patients and impute a patient-specific prior via weighted aggregation of the smoothed priors, using label-gating to encourage class-consistent transfer (Sec.~\\ref{sec:prior_imputation})."
+  ],
+  "2603-21809#s41": [
+   "sentence",
+   "We then train a fundus student with supervised loss, distillation to the imputed priors, and a relational term aligning fundus embedding similarities with those imputed priors (Sec.~\\ref{sec:student_training})."
+  ],
+  "2603-21809#s42": [
+   "sentence",
+   "At inference, only fundus inputs and routine biomarkers are required; no MRI is needed."
+  ],
+  "2603-21809#fig1": [
+   "figure",
+   "\\begin{figure} \\includegraphics[width=\\textwidth]{finale_cgmd.png} \\caption{Overview of the proposed CGMD. MRI teacher embeddings are smoothed on a clinical $k$NN graph to impute fundus priors, and the fundus student is trained with supervised, prior, and relational distillation (MRI-free inference).} \\label{fig1} \\end{figure}"
+  ],
+  "2603-21809#ssec1": [
+   "subsection",
+   "MRI Teacher and Smoothed Priors"
+  ],
+  "2603-21809#s43": [
+   "sentence",
+   "\\label{sec:teacher_smoothing} We first train an MRI teacher on $\\mathcal{D}_B$ and extract a teacher embedding $z_i^{(0)}\\in\\mathbb{R}^d$ for each MRI patient $i$."
+  ],
+  "2603-21809#s44": [
+   "sentence",
+   "If multiple MRI scans are available for a patient, we compute scan-level embeddings and average them to obtain $z_i^{(0)}$."
+  ],
+  "2603-21809#s45": [
+   "sentence",
+   "Using the clinical biomarkers $\\{c_i^B\\}$, we construct a directed, weighted $k$-NN graph $G_B$ by connecting each node $i$ to its $k$ nearest MRI neighbors $\\mathcal{N}_B(i)$ under cosine distance in biomarker space."
+  ],
+  "2603-21809#s46": [
+   "sentence",
+   "Here, $c_i^B\\in\\mathbb{R}^m$ is the patient’s preprocessed clinical biomarker feature vector (numeric features concatenated with one-hot categorical variables)."
+  ],
+  "2603-21809#s47": [
+   "sentence",
+   "For each directed edge $(i\\!\\to\\! j)$ with $j\\in\\mathcal{N}_B(i)$, we define the cosine distance $d_{ij}=1-\\cos(c_i^B,c_j^B)$, convert it to a similarity weight $w_{ij}=\\exp(-d_{ij}^2/\\sigma^2)$, where $\\sigma>0$ is a scale parameter controlling how quickly similarity decays with clinical distance, and normalize over $\\mathcal{N}_B(i)$:"
+  ],
+  "2603-21809#eq1": [
+   "formula",
+   "\\begin{equation} p_{ij}=\\frac{w_{ij}}{\\sum_{\\ell\\in\\mathcal{N}_B(i)} w_{i\\ell}}. \\end{equation}"
+  ],
+  "2603-21809#s48": [
+   "sentence",
+   "We smooth teacher embeddings via one-step residual propagation:"
+  ],
+  "2603-21809#eq2": [
+   "formula",
+   "\\begin{equation} \\tilde z_i=\\alpha z_i^{(0)}+(1-\\alpha)\\sum_{j\\in\\mathcal{N}_B(i)} p_{ij}\\, z_j^{(0)}, \\end{equation}"
+  ],
+  "2603-21809#s49": [
+   "sentence",
+   "where $\\alpha\\in[0,1]$ anchors the representation to the original teacher embedding."
+  ],
+  "2603-21809#s50": [
+   "sentence",
+   "The smoothed embeddings $\\{\\tilde z_i\\}$ are used as teacher priors for cross-cohort imputation, denoising representations by aggregating information from clinically similar neighbors."
+  ],
+  "2603-21809#s51": [
+   "sentence",
+   "This reduces variability from scan noise and individual outliers by borrowing signal from clinically similar patients."
+  ],
+  "2603-21809#ssec2": [
+   "subsection",
+   "Cross-cohort Prior Imputation"
+  ],
+  "2603-21809#s52": [
+   "sentence",
+   "\\label{sec:prior_imputation} For each fundus patient $u$, we retrieve its top-$k$ clinically nearest MRI patients $\\mathcal{N}_B(u)$ by cosine distance between biomarkers $(c_u^F, c_i^B)$."
+  ],
+  "2603-21809#s53": [
+   "sentence",
+   "Using the same distance-to-weight mapping and normalization as in Sec.~\\ref{sec:teacher_smoothing}, we obtain normalized neighbor weights $\\{p_{ui}\\}_{i\\in\\mathcal{N}_B(u)}$ (defined analogously to $p_{ij}$)."
+  ],
+  "2603-21809#s54": [
+   "sentence",
+   "To enforce class-consistent transfer, we apply label gating: for a fundus patient with label $y_u^F$, we restrict retrieved neighbors to MRI patients with the same label,"
+  ],
+  "2603-21809#eq3": [
+   "formula",
+   "\\begin{equation} \\mathcal{N}_B^{+}(u)=\\{\\, i\\in \\mathcal{N}_B(u)\\;:\\; y_i^B = y_u^F \\,\\}. \\end{equation}"
+  ],
+  "2603-21809#s55": [
+   "sentence",
+   "We then renormalize $p_{ui}$ over $\\mathcal{N}_B^{+}(u)$ so that $\\sum_{i\\in\\mathcal{N}_B^{+}(u)} p_{ui}=1$."
+  ],
+  "2603-21809#s56": [
+   "sentence",
+   "If $\\mathcal{N}_B^{+}(u)=\\emptyset$, we fall back to the ungated neighborhood $\\mathcal{N}_B(u)$ (i.e., no label gating)."
+  ],
+  "2603-21809#s57": [
+   "sentence",
+   "The imputed teacher prior is computed as a weighted average of smoothed MRI priors,"
+  ],
+  "2603-21809#eq4": [
+   "formula",
+   "\\begin{equation} \\hat z_u=\\sum_{i\\in \\mathcal{N}_B^{+}(u)} p_{ui}\\,\\tilde z_i . \\end{equation}"
+  ],
+  "2603-21809#s58": [
+   "sentence",
+   "Fundus data may contain multiple eye images per patient; for notational simplicity we treat each patient as having a single fundus sample."
+  ],
+  "2603-21809#s59": [
+   "sentence",
+   "In practice, we compute $\\hat z_u$ once per patient and assign the same imputed prior to all images from the same patient during training."
+  ],
+  "2603-21809#s60": [
+   "sentence",
+   "Intuitively, this yields a clinically matched teacher target for each fundus patient by borrowing representations from biomarker-similar MRI patients, enabling distillation across disjoint MRI - fundus cohorts."
+  ],
+  "2603-21809#ssec3": [
+   "subsection",
+   "Student training with prior and relational distillation"
+  ],
+  "2603-21809#s61": [
+   "sentence",
+   "\\label{sec:student_training} We train a fundus student on $\\mathcal{D}_F$ using supervised classification together with (i) distillation to imputed priors and (ii) a relational loss defined on a clinical similarity graph over the training fundus patients.\\\\ \\\\ Student model and classification loss."
+  ],
+  "2603-21809#s62": [
+   "sentence",
+   "Given a fundus input $x_u^F$ for patient $u$, the student produces an embedding $z_u\\in\\mathbb{R}^d$ which is $\\ell_2$-normalized and concatenated with an MLP embedding of biomarkers $h(c_u^F)$ before a single-logit prediction head."
+  ],
+  "2603-21809#s63": [
+   "sentence",
+   "Let $\\ell_u\\in\\mathbb{R}$ denote the predicted logit for patient $u$."
+  ],
+  "2603-21809#s64": [
+   "sentence",
+   "We supervise using binary cross-entropy on logits:"
+  ],
+  "2603-21809#eq5": [
+   "formula",
+   "\\begin{equation} \\mathcal{L}_{\\mathrm{cls}} = \\frac{1}{|\\mathcal{B}|}\\sum_{u\\in\\mathcal{B}} \\mathrm{BCEWithLogits}(\\ell_u, y_u^F), \\end{equation}"
+  ],
+  "2603-21809#s65": [
+   "sentence",
+   "where $\\mathcal{B}$ is a minibatch of fundus patients."
+  ],
+  "2603-21809#s66": [
+   "sentence",
+   "This term trains the student to predict the label from fundus imaging (and biomarkers) under standard supervision.\\\\ \\\\ Prior distillation."
+  ],
+  "2603-21809#s67": [
+   "sentence",
+   "We match each fundus embedding to its patient-level imputed teacher prior using cosine distance."
+  ],
+  "2603-21809#s68": [
+   "sentence",
+   "We $\\ell_2$-normalize the imputed prior $\\hat z_u$ before computing cosine similarity:"
+  ],
+  "2603-21809#eq6": [
+   "formula",
+   "\\begin{equation} \\mathcal{L}_{\\mathrm{prior}} = \\frac{1}{|\\mathcal{B}|}\\sum_{u\\in\\mathcal{B}} \\left(1-\\cos\\!\\left(z_u,\\hat z_u\\right)\\right). \\end{equation}"
+  ],
+  "2603-21809#s69": [
+   "sentence",
+   "This term transfers MRI-derived signal by aligning fundus embeddings to the imputed teacher prior for each patient.\\\\ \\\\ Fundus clinical graph and relational distillation."
+  ],
+  "2603-21809#s70": [
+   "sentence",
+   "To constrain relations among student embeddings, we build a weighted clinical $k$-NN graph $G_F=(V_F,E_F)$ over training fundus patients in biomarker space (cosine distance) and symmetrize it to obtain an undirected graph."
+  ],
+  "2603-21809#s71": [
+   "sentence",
+   "We assign nonnegative edge weights $\\pi_{uv}$ using the same distance-to-weight mapping as in Sec.~\\ref{sec:teacher_smoothing}."
+  ],
+  "2603-21809#s72": [
+   "sentence",
+   "Each patient $u$ already has a label-gated imputed prior $\\hat z_u$ from Sec.~\\ref{sec:prior_imputation}$;$ we $\\ell_2$-normalize $\\hat z_u$ when computing cosine similarities and use these priors to define teacher-implied relations for relational matching."
+  ],
+  "2603-21809#s73": [
+   "sentence",
+   "During training, we compute the relational loss only on train-graph edges whose endpoints co-occur in the current minibatch and we gate to same-label pairs ($y_u^F=y_v^F$), yielding the within-batch edge set"
+  ],
+  "2603-21809#eq7": [
+   "formula",
+   "\\begin{equation}\\mathcal{E}_{\\mathcal{B}}=\\{(u,v)\\in E_F:\\ u,v\\in\\mathcal{B},\\ y_u^F=y_v^F\\}.\\end{equation}"
+  ],
+  "2603-21809#s74": [
+   "sentence",
+   "For each clinically similar pair $(u,v)\\in\\mathcal{E}_{\\mathcal{B}}$ (with edge weight $\\pi_{uv}$), we match the student-space similarity to the teacher-implied similarity between their priors:"
+  ],
+  "2603-21809#eq8": [
+   "formula",
+   "\\begin{equation} \\mathcal{L}_{\\mathrm{rel}} = \\frac{1}{\\sum_{(u,v)\\in\\mathcal{E}_{\\mathcal{B}}}\\pi_{uv}} \\sum_{(u,v)\\in\\mathcal{E}_{\\mathcal{B}}} \\pi_{uv}\\left( \\cos(z_u,z_v) - \\cos(\\hat z_u,\\hat z_v) \\right)^2, \\end{equation}"
+  ],
+  "2603-21809#s75": [
+   "sentence",
+   "where $\\cos(\\cdot,\\cdot)$ denotes cosine similarity."
+  ],
+  "2603-21809#s76": [
+   "sentence",
+   "If $\\mathcal{E}_{\\mathcal{B}}=\\emptyset$, we set $\\mathcal{L}_{\\mathrm{rel}}=0$."
+  ],
+  "2603-21809#s77": [
+   "sentence",
+   "Intuitively, on clinical-neighbor pairs, we encourage student similarity $\\cos(z_u,z_v)$ to match teacher-implied similarity $\\cos(\\hat z_u,\\hat z_v)$: similar priors pull embeddings together, while dissimilar priors push them apart."
+  ],
+  "2603-21809#s78": [
+   "sentence",
+   "Same-label gating prevents imposing relational constraints across different disease states.\\\\ \\\\ Overall objective."
+  ],
+  "2603-21809#s79": [
+   "sentence",
+   "The training objective combines classification, prior distillation, and relational distillation:"
+  ],
+  "2603-21809#eq9": [
+   "formula",
+   "\\begin{equation} \\mathcal{L} = \\lambda_{\\mathrm{cls}}\\mathcal{L}_{\\mathrm{cls}} + \\lambda_{\\mathrm{prior}}\\mathcal{L}_{\\mathrm{prior}} + \\lambda_{\\mathrm{rel}}\\mathcal{L}_{\\mathrm{rel}}. \\end{equation}"
+  ],
+  "2603-21809#s80": [
+   "sentence",
+   "Here, $\\lambda_{\\mathrm{cls}}$, $\\lambda_{\\mathrm{prior}}$, and $\\lambda_{\\mathrm{rel}}$ are scalar loss weights."
+  ],
+  "2603-21809#sec3": [
+   "section",
+   "Experiments"
+  ],
+  "2603-21809#s81": [
+   "sentence",
+   "Dataset and Experimental Setup."
+  ],
+  "2603-21809#s82": [
+   "sentence",
+   "We study two private cohorts from a tertiary medical center: a brain MRI cohort (FLAIR; $n{=}295$) and a retinal fundus cohort ($n{=}112$)."
+  ],
+  "2603-21809#s83": [
+   "sentence",
+   "Cohorts are strictly disjoint at the patient level (no paired MRI - fundus subjects) and are linked only through 16 shared structured clinical variables (e.g., age, sex, and routine labs)."
+  ],
+  "2603-21809#s84": [
+   "sentence",
+   "The task is binary hypertension (HTN) prediction; SBP/DBP and explicit HTN diagnosis indicators are excluded to prevent label leakage."
+  ],
+  "2603-21809#s85": [
+   "sentence",
+   "We use 5-fold patient-level stratified cross-validation, reporting patient-level AUC/AUPRC averaged across held-out folds."
+  ],
+  "2603-21809#s86": [
+   "sentence",
+   "Operating-point metrics (sensitivity, specificity, F1) use the fold-specific threshold maximizing Youden's $J$ on the training split and then applied unchanged to the held-out validation split."
+  ],
+  "2603-21809#s87": [
+   "sentence",
+   "For distillation baselines that require paired samples (KD~\\cite{hinton2015distilling}, FitNets~\\cite{romero2014fitnets}, RKD~\\cite{park2019relational}, SimKD~\\cite{chen2022knowledge}), we use label-consistent surrogate pairing: each fundus sample is matched (fixed seed) to 20 randomly sampled MRI patients with the same label, and supervision uses the mean teacher output across matches; FDDM~\\cite …"
+  ],
+  "2603-21809#s88": [
+   "sentence",
+   "Models are implemented in PyTorch (v2.2.2, CUDA 12.1) and trained on an NVIDIA RTX 2080 Ti."
+  ],
+  "2603-21809#s89": [
+   "sentence",
+   "The MRI teacher uses a 2D ResNet-34 with multi-slice input (16 centered slices, 256×256), while the fundus student uses a ResNet-18 on 224×224 images with a clinical vector constructed from the 16 shared variables concatenated with pooled image features before the final classifier (except in biomarker-free ablations)."
+  ],
+  "2603-21809#s90": [
+   "sentence",
+   "We train for 50 epochs with learning rate 1e-4 and batch size 8 using standard preprocessing/augmentation such as horizontal flip and normalization."
+  ],
+  "2603-21809#s91": [
+   "sentence",
+   "Clinical graphs are cosine k-NN (k=20 for MRI; k=5 for fundus)."
+  ],
+  "2603-21809#s92": [
+   "sentence",
+   "We set $\\lambda_{\\mathrm{cls}}=\\lambda_{\\mathrm{distill}}=\\lambda_{\\mathrm{rel}}=1$, $\\sigma=1$, and $\\alpha=0.9$."
+  ],
+  "2603-21809#sec4": [
+   "section",
+   "Performance evaluation"
+  ],
+  "2603-21809#s93": [
+   "sentence",
+   "Comparison with KD Methods."
+  ],
+  "2603-21809#s94": [
+   "sentence",
+   "Table~\\ref{tab:kd_comparison} compares CGMD with distillation baselines adapted to our disjoint-cohort setting across AUC, AUPRC, sensitivity, specificity, and F1."
+  ],
+  "2603-21809#s95": [
+   "sentence",
+   "Among the baselines, logit-based KD is strongest overall (AUC 0.803, AUPRC 0.905, F1 0.832), while FitNets and RKD are competitive but lower on AUC/AUPRC."
+  ],
+  "2603-21809#s96": [
+   "sentence",
+   "CGMD yields the best ranking across the primary metrics, improving AUC by 0.052 and AUPRC by 0.032 over the best baseline, with the highest specificity (0.933) and comparable F1 (0.826)."
+  ],
+  "2603-21809#s97": [
+   "sentence",
+   "These gains indicate that clinically grounded graph-based imputation provides more informative teacher targets than label-matched surrogate pairing."
+  ],
+  "2603-21809#fig2": [
+   "figure",
+   "\\begin{table} \\caption{Patient-level comparison of distillation methods in the disjoint-cohort setting. The best results are highlighted in bold.} \\label{tab:kd_comparison} \\setlength{\\tabcolsep}{4pt} \\begin{tabular}{lccccc} Method & AUC & AUPRC & Sensitivity & Specificity & F1 \\\\ FDDM~\\cite{wang2023fundus} & 0.715\\text{\\scriptsize$\\pm$0.051} & 0.879\\text{\\scriptsize$\\pm$0.013} & 0.815\\text{\\scrip …"
+  ],
+  "2603-21809#fig3": [
+   "figure",
+   "\\begin{table} \\caption{Module ablation for CGMD using patient-level metrics. The best results are highlighted in bold.} \\label{tab:module_ablation} \\setlength{\\tabcolsep}{2pt} \\begin{tabular}{ccccccccc} Distill & Smooth & Rel & AUC & AUPRC & Sensitivity & Specificity & F1 \\\\ \\checkmark & \\ding{55} & \\ding{55} & 0.830\\text{\\scriptsize$\\pm$0.133} & 0.927\\text{\\scriptsize$\\pm$0.060} & 0.766\\text{\\scr …"
+  ],
+  "2603-21809#s98": [
+   "sentence",
+   "\\noindentAblation Studies."
+  ],
+  "2603-21809#s99": [
+   "sentence",
+   "Table~\\ref{tab:module_ablation} breaks down the contribution of each CGMD component."
+  ],
+  "2603-21809#s100": [
+   "sentence",
+   "Prior distillation alone provides a solid baseline, while adding MRI-graph smoothing yields a consistent AUC/AUPRC lift, supporting the hypothesis that smoothing denoises teacher embeddings before cross-cohort imputation."
+  ],
+  "2603-21809#s101": [
+   "sentence",
+   "Using the relational loss without smoothing shifts the operating point toward higher sensitivity and F1 but with a drop in AUC."
+  ],
+  "2603-21809#s102": [
+   "sentence",
+   "Combining distillation, smoothing, and relational matching achieves the best overall AUC/AUPRC and restores balanced performance, indicating that smoothing stabilizes the imputed targets so relational constraints become beneficial rather than over-regularizing."
+  ],
+  "2603-21809#s103": [
+   "sentence",
+   "Overall, the ablations suggest that clinical-graph smoothing is the key enabler that makes relational distillation effective in the disjoint-cohort regime."
+  ],
+  "2603-21809#fig4": [
+   "figure",
+   "\\begin{figure} \\begin{subfigure}[t]{0.475\\linewidth} \\includegraphics[width=\\linewidth]{ablation_a.png} \\caption{Data availability ablation.} \\label{fig:ablation_a} \\end{subfigure} \\hfill \\begin{subfigure}[t]{0.475\\linewidth} \\includegraphics[width=\\linewidth]{ablation_b.png} \\caption{Prior construction ablation.} \\label{fig:ablation_b} \\end{subfigure} \\caption{Impact of (a) data availability and  …"
+  ],
+  "2603-21809#s104": [
+   "sentence",
+   "Fig.~\\ref{fig:ablation_a} ablates data availability: performance improves as more informative inputs are provided, and CGMD remains best overall, indicating that MRI→fundus transfer adds benefit beyond clinical features and/or fundus images alone (or simple concatenation)."
+  ],
+  "2603-21809#s105": [
+   "sentence",
+   "Fig.~\\ref{fig:ablation_b} ablates prior construction for the unpaired fundus cohort."
+  ],
+  "2603-21809#s106": [
+   "sentence",
+   "Local baselines propagate teacher embeddings over a clinical similarity graph (kNN; GraphSAGE ~\\cite{hamilton2017inductive}) without label gating, while global baselines use class-conditional means (Global Class Mean) or cohort-level averages (Global Mean)."
+  ],
+  "2603-21809#s107": [
+   "sentence",
+   "CGMD outperforms all alternatives, supporting that combining patient-specific, graph-mediated priors with class-consistent (label-gated) aggregation is key for effective distillation in the disjoint-cohort setting."
+  ],
+  "2603-21809#sec5": [
+   "section",
+   "Conclusion"
+  ],
+  "2603-21809#s108": [
+   "sentence",
+   "We presented Clinical Graph-Mediated Distillation (CGMD) and formalized a practical new setting: disjoint-cohort cross-modal transfer, where modalities come from separate cohorts and the teacher modality is missing for the student cohort."
+  ],
+  "2603-21809#s109": [
+   "sentence",
+   "CGMD uses shared structured biomarkers to build a clinical similarity graph and propagate MRI teacher embeddings to generate patient-specific distillation targets for fundus training without paired acquisitions."
+  ],
+  "2603-21809#s110": [
+   "sentence",
+   "On 5-fold patient-level cross-validation, CGMD outperformed adapted distillation baselines (AUC 0.855, AUPRC 0.937), and ablations confirmed the importance of clinically meaningful graph structure."
+  ],
+  "2603-21809#s111": [
+   "sentence",
+   "Future work will extend CGMD to other disjoint-cohort modality pairs and clinical tasks."
+  ],
+  "2603-21809#sssec1": [
+   "subsubsection",
+   "\\discintname"
+  ],
+  "2603-21809#s112": [
+   "sentence",
+   "The authors have no competing interests to declare that are relevant to the content of this article."
+  ],
+  "2603-21809#s113": [
+   "sentence",
+   "\\authorrunning{D. Imans et al.} \\institute{ Department of Computer Science and Engineering, \\\\ Sungkyunkwan University, Suwon, South Korea Convergence Research Institute, \\\\ Sungkyunkwan University, Suwon, South Korea Department of AI Systems Engineering, \\\\ Sungkyunkwan University, Suwon, South Korea Department of Electrical and Computer Engineering, \\\\ Sungkyunkwan University, Suwon, South Korea …"
+  ],
+  "2603-21809#s114": [
+   "sentence",
+   "\\keywords{Cross-modal distillation Disjoint-cohort Biomarker graphs.}"
+  ],
+  "2603-21809#s115": [
+   "sentence",
+   "Hypertension (HTN)-related retinal cues are often subtle, heterogeneous, and confounded, leading to weak and high-variance signals that challenge robust inference~\\cite{poplin2018prediction,zhang2020prediction,tan2022new}."
+  ],
+  "2603-21809#s116": [
+   "sentence",
+   "This motivates a deployment-efficient strategy: train using the richer but expensive modality where available, yet require only the inexpensive, routinely acquired modality at inference."
+  ],
+  "2603-21809#s117": [
+   "sentence",
+   "A natural strategy is cross-modal distillation, treating MRI as teacher and fundus as student."
+  ],
+  "2603-21809#s118": [
+   "sentence",
+   "However, most such methods assume paired multimodal data, so the teacher can provide a sample-specific target for each student image."
+  ],
+  "2603-21809#s119": [
+   "sentence",
+   "In practice, paired MRI - fundus acquisitions are rarely available at scale: the modalities are ordered under different clinical indications, and obtaining both typically requires dedicated sub-studies rather than standard care~\\cite{sun2023protocol}."
+  ],
+  "2603-21809#s120": [
+   "sentence",
+   "This yields a disjoint multi-cohort regime in which the teacher modality is systematically missing for the student cohort, motivating methods that establish cross-cohort correspondence through shared structured clinical variables."
+  ],
+  "2603-21809#s121": [
+   "sentence",
+   "Paired cross-modal distillation~\\cite{zhao2020knowledge} assumes co-acquired modalities so the teacher can supply per-instance targets; this breaks when cohorts are disjoint."
+  ],
+  "2603-21809#s122": [
+   "sentence",
+   "Unpaired distillation~\\cite{dou2020unpaired,jiang2021unpaired,yang2025umscs} transfers supervision via modality-bridging translation or reconstruction (e.g., CMEDL~\\cite{jiang2021unpaired} for MRI$\\rightarrow$CT segmentation), but targets closely related modalities of the same anatomy and does not address large gaps such as brain MRI$\\rightarrow$fundus."
+  ],
+  "2603-21809#s123": [
+   "sentence",
+   "Patient-similarity learning from electronic health records~\\cite{gu2022structure} builds clinical similarity graphs from structured variables, but has not been used to generate patient-specific distillation targets for cross-cohort transfer."
+  ],
+  "2603-21809#s124": [
+   "sentence",
+   "To this end, we propose Clinical Graph-Mediated Distillation (CGMD), which transfers vascular representations from brain MRI to fundus imaging without paired acquisitions."
+  ],
+  "2603-21809#s125": [
+   "sentence",
+   "To our knowledge, CGMD is the first distillation approach supporting cross-modal transfer across disjoint cohorts and anatomically distinct modalities (brain MRI$\\rightarrow$fundus) without subject-level correspondence."
+  ],
+  "2603-21809#s126": [
+   "sentence",
+   "Our main contributions are three-fold:"
+  ],
+  "2603-21809#s127": [
+   "sentence",
+   "We identify and address an underexplored transfer setting: unpaired, disjoint-cohort MRI - fundus transfer across a large anatomical modality gap, where paired distillation is infeasible and synthesis-based alignment is ill-posed, motivating biomarker-bridged cross-cohort supervision."
+  ],
+  "2603-21809#s128": [
+   "sentence",
+   "We propose CGMD, which uses shared biomarkers to build a clinical similarity graph, propagates MRI teacher embeddings, and produces patient-specific distillation targets for fundus training without paired acquisition."
+  ],
+  "2603-21809#s129": [
+   "sentence",
+   "Fig.~\\ref{fig1} overviews our pipeline."
+  ],
+  "2603-21809#s130": [
+   "sentence",
+   "Given disjoint MRI ($\\mathcal{D}_B$) and fundus ($\\mathcal{D}_F$) cohorts, we train an MRI teacher, build a $k$NN graph over MRI patients from shared clinical biomarkers, and smooth teacher embeddings into denoised priors (Sec.~\\ref{sec:teacher_smoothing})."
+  ],
+  "2603-21809#s131": [
+   "sentence",
+   "For each fundus patient we impute a patient-specific prior by label-gated aggregation over clinically nearest MRI patients (Sec.~\\ref{sec:prior_imputation}), then train a fundus student with supervised, prior-distillation, and relational losses (Sec.~\\ref{sec:student_training})."
+  ],
+  "2603-21809#s132": [
+   "sentence",
+   "At inference, only fundus images and routine biomarkers are required."
+  ],
+  "2603-21809#fig5": [
+   "figure",
+   "\\begin{figure} \\includegraphics[width=0.95\\textwidth]{finale_cgmd.png} \\caption{Overview of the proposed CGMD. MRI teacher embeddings are smoothed on a clinical $k$NN graph to impute fundus priors, and the fundus student is trained with supervised, prior, and relational distillation (MRI-free inference).} \\label{fig1} \\end{figure}"
+  ],
+  "2603-21809#s133": [
+   "sentence",
+   "Using the clinical biomarkers $\\{c_i^B\\}$, we construct a directed, weighted $k$NN graph $G_B$ by connecting each node $i$ to its $k$ nearest MRI neighbors $\\mathcal{N}_B(i)$ under cosine distance in biomarker space."
+  ],
+  "2603-21809#s134": [
+   "sentence",
+   "Here, $c_i^B\\in\\mathbb{R}^m$ is the patient's preprocessed clinical biomarker feature vector (numeric features concatenated with one-hot categorical variables)."
+  ],
+  "2603-21809#s135": [
+   "sentence",
+   "The smoothed embeddings $\\{\\tilde z_i\\}$ serve as teacher priors, denoising representations by borrowing signal from clinically similar patients and reducing variability from scan noise and outliers."
+  ],
+  "2603-21809#s136": [
+   "sentence",
+   "We define $\\tilde{\\mathcal{N}}_B(u)=\\mathcal{N}_B^{+}(u)$ if $\\mathcal{N}_B^{+}(u)\\neq\\emptyset$, and $\\tilde{\\mathcal{N}}_B(u)=\\mathcal{N}_B(u)$ otherwise, and renormalize $p_{ui}$ over $\\tilde{\\mathcal{N}}_B(u)$."
+  ],
+  "2603-21809#s137": [
+   "sentence",
+   "The imputed teacher prior is:"
+  ],
+  "2603-21809#eq10": [
+   "formula",
+   "\\begin{equation} \\hat z_u=\\sum_{i\\in \\tilde{\\mathcal{N}}_B(u)} p_{ui}\\,\\tilde z_i . \\end{equation}"
+  ],
+  "2603-21809#s138": [
+   "sentence",
+   "Fundus data may contain multiple images per patient; we compute $\\hat z_u$ once per patient and assign it to all of that patient's images."
+  ],
+  "2603-21809#ssec4": [
+   "subsection",
+   "Student Training with Prior and Relational Distillation"
+  ],
+  "2603-21809#s139": [
+   "sentence",
+   "where $\\mathcal{B}$ is a minibatch of fundus patients.\\\\ \\\\ Prior distillation."
+  ],
+  "2603-21809#s140": [
+   "sentence",
+   "\\\\ \\\\ Fundus clinical graph and relational distillation."
+  ],
+  "2603-21809#s141": [
+   "sentence",
+   "To constrain relations among student embeddings, we build a weighted clinical $k$NN graph $G_F=(V_F,E_F)$ over training fundus patients in biomarker space (cosine distance) and symmetrize it to obtain an undirected graph."
+  ],
+  "2603-21809#s142": [
+   "sentence",
+   "Same-label gating prevents relational constraints across disease states."
+  ],
+  "2603-21809#s143": [
+   "sentence",
+   "Notably, $y_u^F$ enters only through loss computation - gating neighbor construction, restricting $\\mathcal{L}_{\\mathrm{rel}}$ to same-label pairs, and supervising $\\mathcal{L}_{\\mathrm{cls}}$ - and never enters the student's forward pass; thus no label or graph lookup is needed at test time.\\\\ \\\\ Overall objective."
+  ],
+  "2603-21809#s144": [
+   "sentence",
+   "We study two private cohorts from Samsung Medical Center: a brain MRI cohort (FLAIR; $n{=}295$) and a retinal fundus cohort ($n{=}112$)."
+  ],
+  "2603-21809#s145": [
+   "sentence",
+   "Cohorts are strictly disjoint at the patient level (no paired MRI - fundus subjects) and are linked only through 15 shared structured clinical variables: 7 binary indicators (sex, dyslipidemia, smoking, peripheral arterial occlusive disease, coronary artery disease (CAD), atrial fibrillation (AF), diabetes mellitus (DM)) and 8 continuous measurements (age, creatinine, blood urea nitrogen, choleste …"
+  ],
+  "2603-21809#s146": [
+   "sentence",
+   "De-identified data may be shared upon reasonable academic request, subject to institutional approval."
+  ],
+  "2603-21809#s147": [
+   "sentence",
+   "The task is binary HTN prediction; systolic/diastolic blood pressure, explicit HTN diagnosis codes, and antihypertensive medication use are excluded from this set to prevent label leakage."
+  ],
+  "2603-21809#s148": [
+   "sentence",
+   "While several retained variables (e.g., CAD, AF, DM) are known comorbidities of chronic HTN and may carry residual predictive signal on their own, none directly encodes blood pressure or HTN status, and we quantify this contribution explicitly via the clinical-only baseline in Fig.~\\ref{fig:ablation_a}."
+  ],
+  "2603-21809#s149": [
+   "sentence",
+   "The MRI teacher uses a 2D ResNet-34 with multi-slice input (16 centered slices, $256\\times256$), while the fundus student uses a ResNet-18 on $224\\times224$ images with a clinical vector constructed from the 15 shared variables concatenated with pooled image features before the final classifier (except in biomarker-free ablations)."
+  ],
+  "2603-21809#s150": [
+   "sentence",
+   "Clinical graphs are cosine $k$NN ($k{=}20$ for MRI; $k{=}5$ for fundus), reflecting the relative cohort sizes ($n{=}295$ vs $n{=}112$) so the smaller fundus cohort is not given an overly diluted neighborhood."
+  ],
+  "2603-21809#s151": [
+   "sentence",
+   "We set $\\lambda_{\\mathrm{cls}}=\\lambda_{\\mathrm{prior}}=\\lambda_{\\mathrm{rel}}=1$, $\\sigma=1$, and $\\alpha=0.9$; target quality is driven primarily by neighbor selection ($k$, label gating) rather than within-neighborhood reweighting, so near-uniform weights under $\\sigma=1$ are sufficient."
+  ],
+  "2603-21809#sec6": [
+   "section",
+   "Performance Evaluation"
+  ],
+  "2603-21809#s152": [
+   "sentence",
+   "Among the baselines, logit-based KD is strongest (AUC 0.803, AUPRC 0.905, F1 0.832), while FitNets and RKD are competitive but lower on AUC/AUPRC."
+  ],
+  "2603-21809#s153": [
+   "sentence",
+   "CGMD improves AUC by 0.052 and AUPRC by 0.032 over the best baseline, with the highest specificity (0.933) and comparable F1 (0.826 vs.\\ 0.832), but at the cost of lower sensitivity (0.728 vs.\\ 0.770 for KD and 0.815 for FDDM), reflecting an operating point that favors specificity over sensitivity."
+  ],
+  "2603-21809#s154": [
+   "sentence",
+   "These gains indicate that clinically grounded graph-based imputation provides more informative teacher targets than label-matched surrogate pairing, though the sensitivity trade-off should be weighed alongside the ranking-based gains."
+  ],
+  "2603-21809#s155": [
+   "sentence",
+   "Prior distillation alone provides a solid baseline, while adding MRI-graph smoothing improves AUC with comparable AUPRC, supporting the hypothesis that smoothing denoises teacher embeddings before cross-cohort imputation."
+  ],
+  "2603-21809#s156": [
+   "sentence",
+   "Fig.~\\ref{fig:ablation_a} ablates data availability: performance improves as more informative inputs are provided, and CGMD remains best overall, indicating that MRI$\\rightarrow$fundus adds benefit beyond clinical features and/or fundus images alone (or simple concatenation)."
+  ],
+  "2603-21809#s157": [
+   "sentence",
+   "Critically, the Fundus+Clinical condition already accesses the same 15 biomarkers used to build CGMD's targets, so the further gain to CGMD is attributable solely to the MRI-derived graph-mediated supervision, holding biomarker access fixed and ruling out a clinical-feature shortcut."
+  ],
+  "2603-21809#s158": [
+   "sentence",
+   "Local baselines propagate teacher embeddings over a clinical similarity graph ($k$NN; GraphSAGE~\\cite{hamilton2017inductive}) without label gating, while global baselines use class-conditional means (Global Class Mean) or cohort-level averages (Global Mean)."
+  ],
+  "2603-21809#s159": [
+   "sentence",
+   "CGMD outperforms all alternatives, consistent with the benefit of combining patient-specific, graph-mediated priors with class-consistent (label-gated) aggregation; however, as the local baselines also differ in propagation strategy, this comparison does not isolate label gating alone, and a controlled ablation is left to future work."
+  ],
+  "2603-21809#fig6": [
+   "figure",
+   "\\begin{figure} \\includegraphics[width=0.9\\textwidth]{vis.png} \\caption{Grad-CAM visualizations for a representative disagreement case.} \\label{fig:gradcam} \\end{figure}"
+  ],
+  "2603-21809#s160": [
+   "sentence",
+   "\\noindentQualitative Analysis."
+  ],
+  "2603-21809#s161": [
+   "sentence",
+   "Fig.~\\ref{fig:gradcam} shows a representative disagreement case in which CGMD predicts correctly while both baselines fail."
+  ],
+  "2603-21809#s162": [
+   "sentence",
+   "The baselines concentrate on a narrow region near the optic disc, whereas CGMD attends to a broader retinal area, consistent with diffuse vascular feature utilization."
+  ],
+  "2603-21809#s163": [
+   "sentence",
+   "We presented Clinical Graph-Mediated Distillation (CGMD), a resource-conscious framework for disjoint-cohort cross-modal transfer that uses shared biomarkers to propagate MRI teacher embeddings as patient-specific distillation targets for fundus training requiring neither paired acquisitions nor MRI at deployment."
+  ],
+  "2603-21809#s164": [
+   "sentence",
+   "On 5-fold cross-validation, CGMD outperformed adapted distillation baselines, with ablations confirming the importance of clinically grounded graph structure."
+  ],
+  "2603-21809#s165": [
+   "sentence",
+   "As a single-center study with a modest fundus cohort ($n{=}112$), these results are preliminary; future work will pursue external validation on larger multi-center cohorts, extending to other disjoint-cohort modality pairs."
+  ],
+  "2603-21809#sssec2": [
+   "subsubsection",
+   "\\ackname"
+  ],
+  "2603-21809#s166": [
+   "sentence",
+   "This work was supported in part by the Korea government (MSIT), IITP, under IITP-2026-RS-2020-II201821 (60\\%) and RS-2019-II190421 (10\\%); and by the Ministry of SMEs and Startups (MSS) under RS-2024-00514724 (30\\%)."
+  ],
+  "2603-21809#s167": [
+   "sentence",
+   "Professors D.T."
+  ],
+  "2603-21809#s168": [
+   "sentence",
+   "Le and H."
+  ],
+  "2603-21809#s169": [
+   "sentence",
+   "Choo are also with SKAI X Inc."
+  ]
+ },
+ "hierarchy_rows": 276,
+ "bibtex": [
+  {
+   "arxiv_id": "2603.21809",
+   "citation_key": "chen2022knowledge",
+   "entry_type": "inproceedings",
+   "title": "Knowledge distillation with the reused teacher classifier",
+   "authors": [
+    "Defang Chen",
+    "Jian-Ping Mei",
+    "Hailin Zhang",
+    "Can Wang",
+    "Yan Feng",
+    "Chun Chen"
+   ],
+   "year": 2022,
+   "doi": null,
+   "journal": "Proceedings of the IEEE/CVF conference on computer vision and pattern recognition",
+   "url": null
+  },
+  {
+   "arxiv_id": "2603.21809",
+   "citation_key": "dou2020unpaired",
+   "entry_type": "article",
+   "title": "Unpaired multi-modal segmentation via knowledge distillation",
+   "authors": [
+    "Qi Dou",
+    "Quande Liu",
+    "Pheng Ann Heng",
+    "Ben Glocker"
+   ],
+   "year": 2020,
+   "doi": null,
+   "journal": "IEEE transactions on medical imaging",
+   "url": null
+  },
+  {
+   "arxiv_id": "2603.21809",
+   "citation_key": "gu2022structure",
+   "entry_type": "article",
+   "title": "Structure-aware siamese graph neural networks for encounter-level patient similarity learning",
+   "authors": [
+    "Yifan Gu",
+    "Xuebing Yang",
+    "Lei Tian",
+    "Hongyu Yang",
+    "Jicheng Lv",
+    "Chao Yang",
+    "Jinwei Wang",
+    "Jianing Xi",
+    "Guilan Kong",
+    "Wensheng Zhang"
+   ],
+   "year": 2022,
+   "doi": null,
+   "journal": "Journal of Biomedical Informatics",
+   "url": null
+  },
+  {
+   "arxiv_id": "2603.21809",
+   "citation_key": "hainsworth2024cerebral",
+   "entry_type": "article",
+   "title": "Cerebral small vessel disease, hypertension, and vascular contributions to cognitive impairment and dementia",
+   "authors": [
+    "Atticus H Hainsworth",
+    "Hugh S Markus",
+    "Julie A Schneider"
+   ],
+   "year": 2024,
+   "doi": null,
+   "journal": "Hypertension",
+   "url": null
+  },
+  {
+   "arxiv_id": "2603.21809",
+   "citation_key": "hamilton2017inductive",
+   "entry_type": "article",
+   "title": "Inductive representation learning on large graphs",
+   "authors": [
+    "Will Hamilton",
+    "Zhitao Ying",
+    "Jure Leskovec"
+   ],
+   "year": 2017,
+   "doi": null,
+   "journal": "Advances in neural information processing systems",
+   "url": null
+  },
+  {
+   "arxiv_id": "2603.21809",
+   "citation_key": "hinton2015distilling",
+   "entry_type": "article",
+   "title": "Distilling the knowledge in a neural network",
+   "authors": [
+    "Geoffrey Hinton",
+    "Oriol Vinyals",
+    "Jeff Dean"
+   ],
+   "year": 2015,
+   "doi": null,
+   "journal": "arXiv preprint arXiv:1503.02531",
+   "url": "https://arxiv.org/abs/1503.02531"
+  },
+  {
+   "arxiv_id": "2603.21809",
+   "citation_key": "hricak2025strengthening",
+   "entry_type": "article",
+   "title": "Strengthening medical imaging capacity: the time is now",
+   "authors": [
+    "Hedvig Hricak",
+    "John O Prior",
+    "Ada Muellner",
+    "May Abdel-Wahab",
+    "Bibb Allen",
+    "Rifat Atun",
+    "Giovanni G Cerri",
+    "Wilfred Ngwa",
+    "Monika Hierath",
+    "Andrew M Scott"
+   ],
+   "year": 2025,
+   "doi": null,
+   "journal": "The Lancet Oncology",
+   "url": null
+  },
+  {
+   "arxiv_id": "2603.21809",
+   "citation_key": "jiang2021unpaired",
+   "entry_type": "article",
+   "title": "Unpaired cross-modality educed distillation (CMEDL) for medical image segmentation",
+   "authors": [
+    "Jue Jiang",
+    "Andreas Rimner",
+    "Joseph O Deasy",
+    "Harini Veeraraghavan"
+   ],
+   "year": 2021,
+   "doi": null,
+   "journal": "IEEE transactions on medical imaging",
+   "url": null
+  },
+  {
+   "arxiv_id": "2603.21809",
+   "citation_key": "martin20242024",
+   "entry_type": "article",
+   "title": "2024 heart disease and stroke statistics: a report of US and global data from the American Heart Association",
+   "authors": [
+    "Seth S Martin",
+    "Aaron W Aday",
+    "Zaid I Almarzooq",
+    "Cheryl AM Anderson",
+    "Pankaj Arora",
+    "Christy L Avery",
+    "Carissa M Baker-Smith",
+    "Bethany Barone Gibbs",
+    "Andrea Z Beaton",
+    "Amelia K Boehme"
+   ],
+   "year": 2024,
+   "doi": null,
+   "journal": "Circulation",
+   "url": null
+  },
+  {
+   "arxiv_id": "2603.21809",
+   "citation_key": "murali2024bringing",
+   "entry_type": "article",
+   "title": "Bringing MRI to low-and middle-income countries: directions, challenges and potential solutions",
+   "authors": [
+    "Sanjana Murali",
+    "Hao Ding",
+    "Fope Adedeji",
+    "Cathy Qin",
+    "Johnes Obungoloch",
+    "Iris Asllani",
+    "Udunna Anazodo",
+    "Ntobeko AB Ntusi",
+    "Regina Mammen",
+    "Thoralf Niendorf"
+   ],
+   "year": 2024,
+   "doi": null,
+   "journal": "NMR in Biomedicine",
+   "url": null
+  },
+  {
+   "arxiv_id": "2603.21809",
+   "citation_key": "nakayama2025comprehensive",
+   "entry_type": "article",
+   "title": "A Comprehensive Review of Portable Retinal Cameras: Technical Features, AI Integration, and Clinical Potential",
+   "authors": [
+    "Luis Filipe Nakayama",
+    "Lucas Zago Ribeiro",
+    "Cindy Lie Tabuse",
+    "Fernando Malerbi",
+    "Caio Regatieri"
+   ],
+   "year": 2025,
+   "doi": null,
+   "journal": "AJO International",
+   "url": null
+  },
+  {
+   "arxiv_id": "2603.21809",
+   "citation_key": "park2019relational",
+   "entry_type": "inproceedings",
+   "title": "Relational knowledge distillation",
+   "authors": [
+    "Wonpyo Park",
+    "Dongju Kim",
+    "Yan Lu",
+    "Minsu Cho"
+   ],
+   "year": 2019,
+   "doi": null,
+   "journal": "Proceedings of the IEEE/CVF conference on computer vision and pattern recognition",
+   "url": null
+  },
+  {
+   "arxiv_id": "2603.21809",
+   "citation_key": "poplin2018prediction",
+   "entry_type": "article",
+   "title": "Prediction of cardiovascular risk factors from retinal fundus photographs via deep learning",
+   "authors": [
+    "Ryan Poplin",
+    "Avinash V Varadarajan",
+    "Katy Blumer",
+    "Yun Liu",
+    "Michael V McConnell",
+    "Greg S Corrado",
+    "Lily Peng",
+    "Dale R Webster"
+   ],
+   "year": 2018,
+   "doi": null,
+   "journal": "Nature biomedical engineering",
+   "url": null
+  },
+  {
+   "arxiv_id": "2603.21809",
+   "citation_key": "romero2014fitnets",
+   "entry_type": "article",
+   "title": "FitNets: hints for thin deep nets (2014)",
+   "authors": [
+    "Adriana Romero",
+    "Nicolas Ballas",
+    "Samira Ebrahimi Kahou",
+    "Antoine Chassang",
+    "Carlo Gatta",
+    "Yoshua Bengio"
+   ],
+   "year": 2014,
+   "doi": null,
+   "journal": "arXiv preprint arXiv:1412.6550",
+   "url": "https://arxiv.org/abs/1412.6550"
+  },
+  {
+   "arxiv_id": "2603.21809",
+   "citation_key": "sole2024impact",
+   "entry_type": "article",
+   "title": "The impact of chronic hypertension on small vessel disease–neuroinflammation beyond white matter hyperintensities",
+   "authors": [
+    "Gemma Sole-Guardia",
+    "Emma Custers",
+    "Arthur de Lange",
+    "Elyne Clijncke",
+    "Bram Geenen",
+    "Jose Gutierrez",
+    "Benno Kusters",
+    "Jurgen Claassen",
+    "Frank-Erik de Leeuw",
+    "Maximilian Wiesmann"
+   ],
+   "year": 2024,
+   "doi": null,
+   "journal": "Cerebral Circulation-Cognition and Behavior",
+   "url": null
+  },
+  {
+   "arxiv_id": "2603.21809",
+   "citation_key": "sun2023protocol",
+   "entry_type": "article",
+   "title": "Protocol for Multi-modality MEdical imaging sTudy bAsed on KaiLuan Study (META-KLS): rationale, design and database building",
+   "authors": [
+    "Jing Sun",
+    "Ying Hui",
+    "Jing Li",
+    "Xinyu Zhao",
+    "Qian Chen",
+    "Xiaoshuai Li",
+    "Ning Wu",
+    "Mingze Xu",
+    "Wenjuan Liu",
+    "Rui Li"
+   ],
+   "year": 2023,
+   "doi": null,
+   "journal": "BMJ open",
+   "url": null
+  },
+  {
+   "arxiv_id": "2603.21809",
+   "citation_key": "tan2022new",
+   "entry_type": "article",
+   "title": "The new era of retinal imaging in hypertensive patients",
+   "authors": [
+    "Wilson Tan",
+    "Xinwen Yao",
+    "Thu-Thao Le",
+    "Bingyao Tan",
+    "Leopold Schmetterer",
+    "Jacqueline Chua"
+   ],
+   "year": 2022,
+   "doi": null,
+   "journal": "The Asia-Pacific Journal of Ophthalmology",
+   "url": null
+  },
+  {
+   "arxiv_id": "2603.21809",
+   "citation_key": "wang2023fundus",
+   "entry_type": "inproceedings",
+   "title": "Fundus-enhanced disease-aware distillation model for retinal disease classification from OCT images",
+   "authors": [
+    "Lehan Wang",
+    "Weihang Dai",
+    "Mei Jin",
+    "Chubin Ou",
+    "Xiaomeng Li"
+   ],
+   "year": 2023,
+   "doi": null,
+   "journal": "International Conference on Medical Image Computing and Computer-Assisted Intervention",
+   "url": null
+  },
+  {
+   "arxiv_id": "2603.21809",
+   "citation_key": "yang2025umscs",
+   "entry_type": "article",
+   "title": "Umscs: a novel unpaired multimodal image segmentation method via cross-modality generative and semi-supervised learning",
+   "authors": [
+    "Feiyang Yang",
+    "Xiongfei Li",
+    "Bo Wang",
+    "Peihong Teng",
+    "Guifeng Liu"
+   ],
+   "year": 2025,
+   "doi": null,
+   "journal": "International Journal of Computer Vision",
+   "url": null
+  },
+  {
+   "arxiv_id": "2603.21809",
+   "citation_key": "zhang2020prediction",
+   "entry_type": "article",
+   "title": "Prediction of hypertension, hyperglycemia and dyslipidemia from retinal fundus photographs via deep learning: A cross-sectional study of chronic diseases in central China",
+   "authors": [
+    "Li Zhang",
+    "Mengya Yuan",
+    "Zhen An",
+    "Xiangmei Zhao",
+    "Hui Wu",
+    "Haibin Li",
+    "Ya Wang",
+    "Beibei Sun",
+    "Huijun Li",
+    "Shibin Ding"
+   ],
+   "year": 2020,
+   "doi": null,
+   "journal": "PloS one",
+   "url": null
+  },
+  {
+   "arxiv_id": "2603.21809",
+   "citation_key": "zhao2020knowledge",
+   "entry_type": "inproceedings",
+   "title": "Knowledge as priors: Cross-modal knowledge generalization for datasets without superior knowledge",
+   "authors": [
+    "Long Zhao",
+    "Xi Peng",
+    "Yuxiao Chen",
+    "Mubbasir Kapadia",
+    "Dimitris N Metaxas"
+   ],
+   "year": 2020,
+   "doi": null,
+   "journal": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+   "url": null
+  }
+ ]
+}

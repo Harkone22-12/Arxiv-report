@@ -4,11 +4,12 @@ Source of the report of Group 10 for the arXiv project of *Introduction to Data 
 
 - **Published report:** <https://harkone22-12.github.io/Arxiv-report/>
 - **Code repository:** <https://github.com/thinhelzan842/intro-ds-arxiv-project>
-- **Project statement:** <https://hcmus-cs-ta.github.io/lab-book/intro-ds/statement/crawling/>
+- **Project statement:** <https://hcmus-cs-ta.github.io/lab-book/intro-ds/statement/crawling/>,
+  <https://hcmus-cs-ta.github.io/lab-book/intro-ds/statement/parsing/>
 
-The report is a Jupyter Book 2 (MyST) site. Chapters 3–5 are notebooks that are **executed when the book is
-built**: every table, figure and number in them is computed from the files in `data/`; nothing is a pasted
-screenshot.
+The report is a Jupyter Book 2 (MyST) site. Chapters 3–5 of each milestone, and chapter 2.4 of Milestone 2,
+are notebooks that are **executed when the book is built**: every table, figure and number in them is
+computed from the files in `data/`; nothing is a pasted screenshot.
 
 ## Layout
 
@@ -26,12 +27,26 @@ screenshot.
 │   ├── performance.ipynb        4. Scraper performance        (executed at build time)
 │   ├── conclusion.ipynb         5. Conclusion                 (executed at build time)
 │   └── report_data.py           loaders and table/chart helpers shared by the notebooks
-├── data/                        log files of the crawl that the notebooks read
-├── tools/export_report_data.py  builds data/ from the crawl folder
+├── milestone2/
+│   ├── overview.md              1. Overview
+│   ├── hierarchy.md             2.1 Hierarchical parsing
+│   ├── normalization.md         2.2 Standardization: macros, cleanup, math and sentences
+│   ├── references.md            2.3 References: BibTeX extraction and deduplication
+│   ├── deduplication.ipynb      2.4 Element IDs and full-text deduplication (executed at build time)
+│   ├── running.md               2.5 Running the parser on 20,000 papers
+│   ├── statistics.ipynb         3. Parsing statistics         (executed at build time)
+│   ├── performance.ipynb        4. Parser performance         (executed at build time)
+│   ├── conclusion.ipynb         5. Conclusion                 (executed at build time)
+│   └── report_data.py           loaders and table/chart helpers of the Milestone 2 notebooks
+├── data/                        log files that the notebooks read
+├── tools/export_report_data.py  builds the Milestone 1 files of data/ from the crawl folder
+├── tools/export_m2_data.py      builds the Milestone 2 files of data/ from the parsing logs
 └── .github/workflows/deploy.yml builds the book and deploys it to GitHub Pages on every push to main
 ```
 
 ## Updating the data
+
+### Milestone 1
 
 `data/` is produced from the crawl folder (`MyDrive/arxiv-project` on Colab, or a local copy of it), which
 must contain `logs/`, `state/` and `data/raw/`:
@@ -56,6 +71,32 @@ modified.
 | `references_log.csv` | `logs/references.csv` | one row per logged reference request |
 | `reference_fields.json` | `data/raw/*/references.json` | field completeness over all saved references |
 | `corpus_check.json` | receipts against `data/raw/` | `ok` receipts whose version folder is missing |
+
+### Milestone 2
+
+After the last session of `src/15_run_parsing.ipynb`, copy from `MyDrive/arxiv-project` into a local folder
+(keeping the sub-folders) the four log files, the resume index and the parsed file of the worked example:
+
+```text
+<folder>/logs/m2_stats.json, m2_benchmark.json, m2_benchmark_sessions.jsonl, m2_parse_status.csv
+<folder>/state/m2/done.jsonl
+<folder>/data/parsed/2603-21809.json
+```
+
+then run
+
+```bash
+python tools/export_m2_data.py <folder>
+```
+
+| File in `data/` | Source | Content |
+|---|---|---|
+| `m2_stats.json` | `logs/m2_stats.json` | version status, success rate, coverage, elements and entries before/after dedup |
+| `m2_benchmark.json` | `logs/m2_benchmark.json` | wall time, time per paper, RAM (with its time series), output size |
+| `m2_benchmark_sessions.jsonl` | `logs/m2_benchmark_sessions.jsonl` | one record per session of `15_run_parsing` |
+| `m2_parse_status.csv` | `logs/m2_parse_status.csv` | one row per version: status, source of the references, nodes, seconds |
+| `m2_papers.csv` | `state/m2/done.jsonl` | one row per paper: versions, nodes, rows of the tables, BibTeX entries, seconds |
+| `m2_example.json` | `data/parsed/<id>.json` | the paper of the worked example of chapter 2.4 (`--example <id>` to choose another) |
 
 If a file is missing, the notebooks stop with a message naming it and the build fails instead of publishing
 a broken page.
