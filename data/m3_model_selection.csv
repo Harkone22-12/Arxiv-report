@@ -1,0 +1,15 @@
+config,kind,params,cv_mrr5,cv_std,valid_mrr5,choice_score,seconds
+baseline,baseline,{},0.9999815507604669,2.453895726196036e-05,1.0,0.9999907753802335,31.8
+"logreg(C=0.1, manual_weight=1)",logreg,"{""C"": 0.1, ""manual_weight"": 1}",0.9999815013826934,1.5105508157453626e-05,1.0,0.9999907506913467,244.0
+"logreg(C=0.1, manual_weight=3)",logreg,"{""C"": 0.1, ""manual_weight"": 3}",0.9999815013826934,1.5105508157453626e-05,1.0,0.9999907506913467,252.4
+"logreg(C=1.0, manual_weight=1)",logreg,"{""C"": 1.0, ""manual_weight"": 1}",0.9999815013826934,1.5105508157453626e-05,1.0,0.9999907506913467,261.4
+"logreg(C=1.0, manual_weight=3)",logreg,"{""C"": 1.0, ""manual_weight"": 3}",0.9999815013826934,1.5105508157453626e-05,1.0,0.9999907506913467,254.3
+"logreg(C=1.0, manual_weight=5)",logreg,"{""C"": 1.0, ""manual_weight"": 5}",0.9999815013826934,1.5105508157453626e-05,1.0,0.9999907506913467,255.8
+"logreg(C=10.0, manual_weight=1)",logreg,"{""C"": 10.0, ""manual_weight"": 1}",0.9999815013826934,1.5105508157453626e-05,1.0,0.9999907506913467,260.0
+"logreg(C=10.0, manual_weight=3)",logreg,"{""C"": 10.0, ""manual_weight"": 3}",0.9999815013826934,1.5105508157453626e-05,1.0,0.9999907506913467,253.4
+"logreg(C=10.0, manual_weight=5)",logreg,"{""C"": 10.0, ""manual_weight"": 5}",0.9999815013826934,1.5105508157453626e-05,1.0,0.9999907506913467,251.3
+"logreg(C=0.1, manual_weight=5)",logreg,"{""C"": 0.1, ""manual_weight"": 5}",0.9999753758084209,2.295352501376153e-05,1.0,0.9999876879042104,266.3
+"ranker(num_leaves=31, manual_weight=3)",ranker,"{""num_leaves"": 31, ""manual_weight"": 3}",0.9991796010072946,0.0002132129435737482,1.0,0.9995898005036473,343.3
+"ranker(num_leaves=15, manual_weight=1)",ranker,"{""num_leaves"": 15, ""manual_weight"": 1}",0.9990240957072469,0.00046070797800869403,1.0,0.9995120478536235,337.4
+"ranker(num_leaves=15, manual_weight=3)",ranker,"{""num_leaves"": 15, ""manual_weight"": 3}",0.9990240957072469,0.00046070797800869403,1.0,0.9995120478536235,339.8
+"ranker(num_leaves=31, manual_weight=1)",ranker,"{""num_leaves"": 31, ""manual_weight"": 1}",0.9989815407724809,0.0006032417887469927,1.0,0.9994907703862405,347.6

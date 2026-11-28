@@ -1,7 +1,7 @@
 # 2.3 References: BibTeX extraction and deduplication
 
 *Author: Lưu Minh Quân · code: `src/12_bibtex.ipynb` (`extract_bib`, `bib_source`, `dedup_bib`, `rename_cites`;
-40 offline tests)*
+41 offline tests)*
 
 `parse_paper` calls this step on the **gathered** text of each version (comments removed, `\input` and
 `\include` expanded, chapter [2.1](hierarchy.md)), before the text is normalized and the tree is built:
@@ -29,17 +29,40 @@ thousands of entries. BibTeX prints only the cited entries, so the parser keeps 
 in a `\cite`-family command of that version; `\nocite{*}`, and versions without any `\cite`, keep every
 entry.
 
-**About `.bbl` files.** Some authors upload only the compiled `.bbl` and not the `.bib`. Asked whether to keep
-these files, the teacher answered to convert the `.bbl` back to BibTeX when possible. The parser converts
-both kinds of `.bbl`: the classic one (a `\bibitem` list, read like `\bibitem` in a `.tex`) and the biblatex
-one (`\entry … \endentry` records). The crawl of Milestone 1, however, kept only `.tex` and `.bib` files, so
-there is no `.bbl` in the corpus: the versions that relied on one are labelled `missing_bbl` and their
-references are lost (their share is in chapter [3.5](statistics.ipynb)).
+**About `.bbl` files and hand-written reference lists.** Some authors upload only the compiled `.bbl` and not
+the `.bib`. Asked how to handle these versions (Q&A M1 #18, M2 #2), the instructor advised attempting to
+convert `.bbl` back into BibTeX entries directly for the `bibtex` table (without needing to emit intermediate
+`.bib` files if the downstream pipeline does not require them) and documenting the approaches tried and any
+remaining losses. Our parser therefore implements converters for both `.bbl` formats: classic `.bbl` files
+(a `\bibitem` list parsed by the same extractor as in-`.tex` `\bibitem` entries) and biblatex `.bbl` files
+(`\entry … \endentry` records). On our 32-paper validation sample downloaded with `.bbl` files, all 4 `.bbl`
+versions were converted cleanly (section 2.3.6). On the full Milestone 1 corpus, however, only `.tex` and
+`.bib` files were kept per the Milestone 1 requirement, so no `.bbl` file is present on Drive: **2,231 of the
+25,767 TeX versions (8.66%)** declare a `.bib` that was not uploaded and are recorded as `missing_bbl`, while
+**496 versions (1.92%)** have no bibliography declaration or `thebibliography` block (`none`, which includes
+papers whose authors typed references by hand under a `\section{References}` heading; those prose lists are
+excluded from the hierarchy and not scraped). Recovering the `missing_bbl` references would require
+re-downloading those 2,231 versions with their `.bbl` files (~2 hours at 3 s/request); the parser is ready
+for them, and we record this as the main known bibliography loss of Milestone 2 (chapter [3.5](statistics.ipynb)).
 
 ## 2.3.2 Converting `\bibitem` to BibTeX
 
-A `\bibitem` is free text, so fields are recovered with regular expressions. The most reliable rules run
-first:
+A `\bibitem` is free text, so fields are recovered with regular expressions—with one structured exception
+added in parser **13.9** (27 Nov 2026):
+
+- **REVTeX (`apsrev4-1` / `apsrev4-2`) items.** Many physics papers paste compiled REVTeX `\bibitem` blocks
+  between `\BibitemOpen` and `\BibitemShut{NoStop}`, where every field is wrapped in `\bibinfo{author}{…}`,
+  `\bibinfo{title}{…}`, `\bibinfo{journal}{…}`, etc. Through parser 13.8, these were parsed as free text,
+  leaving raw macro names in titles and authors (e.g. `BibitemOpen K. Ahnert…`) and splitting journals at
+  `Phys.` (`Lett`). Since parser 13.9 (`revtex_to_fields`, verified by `test_revtex_bibitems`), `\bibinfo`
+  fields are read directly, and REVTeX items without `\bibinfo` have their wrapper macros stripped before
+  free-text parsing. Across the 190 papers containing `\BibitemOpen` in any `.tex` or `.bbl` file, entries
+  containing macro names in their title or authors dropped from 10,727 to 0, entries with extracted authors
+  rose from 6,282 to 11,325, all 11,597 items carrying `\bibinfo{title}` recovered their title, and the 3,755
+  Physical Review items without a title (journal/volume/page only) now leave `title` empty rather than
+  storing corrupted text.
+
+For every other `\bibitem`, the most reliable rules run first:
 
 1. **Identifiers.** DOI (from `\doi{}`, `doi.org/` links or `doi:` text), URL, arXiv ID and year (the year in
    parentheses, a year written right after the title, otherwise the last year in the text).

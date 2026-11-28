@@ -35,5 +35,18 @@ project:
         - file: milestone2/statistics.ipynb
         - file: milestone2/performance.ipynb
         - file: milestone2/conclusion.ipynb
+    - title: Milestone 3 - Reference Matching
+      children:
+        - file: milestone3/overview.md
+        - title: 2. Implementation
+          children:
+            - file: milestone3/data.md
+            - file: milestone3/labeling.md
+            - file: milestone3/features.md
+            - file: milestone3/model.md
+            - file: milestone3/pipeline.md
+        - file: milestone3/statistics.ipynb
+        - file: milestone3/results.ipynb
+        - file: milestone3/conclusion.ipynb
 site:
   template: book-theme

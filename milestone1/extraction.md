@@ -38,6 +38,16 @@ Two consequences follow from this rule:
   The corpus is a text corpus: it is not expected to compile without the files that were removed.
 - **An archive without any `.tex` file keeps nothing.** A lone `.bib` is not a usable source, so such a
   version is recorded as `empty_source`.
+- **`.bbl` files and hand-written reference lists.** Because the Milestone 1 statement explicitly restricts
+  extracted files to `.tex` and `.bib`, compiled `.bbl` files are discarded during extraction. In Milestone 2,
+  our bibliography parser (`src/12_bibtex.ipynb`) implements full converters for both classic and biblatex
+  `.bbl` files (validated on a 32-paper sample downloaded with `.bbl` files), while versions in the full
+  corpus whose `.bib` was not shipped and whose `.bbl` was removed in Milestone 1 are explicitly tracked as
+  `missing_bbl` (2,231 of 25,767 TeX versions; see Milestone 2 [2.3](../milestone2/references.md) and
+  [3.5](../milestone2/statistics.ipynb)). Papers whose authors typed references manually as plain prose under
+  a `\section{References}` heading (without `.bib` or `\bibitem`) keep their `.tex` files intact here;
+  Milestone 2 excludes reference sections from the document hierarchy and classifies those versions under
+  `none` rather than applying brittle free-text extraction.
 
 The receipt of a version stores the size of all files of the unpacked archive (`before_bytes`) and the size
 of the kept files (`after_bytes`); the comparison is the subject of [3.2](statistics.ipynb).

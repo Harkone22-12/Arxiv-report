@@ -62,6 +62,22 @@ the checks of section 2.5.4, which reported no problem), and over the corpus the
 local comparison had predicted: two more versions `ok` (the two `no_root` versions of chapter [2.1](hierarchy.md)), 589 fewer tree
 nodes, 806 fewer elements, and 54 and 52 more BibTeX entries before and after deduplication.
 
+**From 13.8 to 13.9 (27 Nov 2026).** Manual inspection during Milestone 3 uncovered the REVTeX `\bibitem`
+problem described in chapter [2.3](references.md). Because `revtex_to_fields` can only affect papers whose
+`.tex` or `.bbl` files contain `\BibitemOpen`, `REPARSE_13_9` targeted only those **190 papers** while
+`CARRY_OVER` kept the 13.8 outputs of the rest. A verification check re-parsed a non-REVTeX sample (128/128
+identical) together with all 20 Milestone 3 manually labelled papers (20/20 identical), confirming that none
+of the carried-over papers or manual-label keys changed. Across the full corpus, BibTeX entries after
+deduplication moved from 766,356 to **766,398** (out of 1,023,822 before deduplication) and deduplicated
+elements from 10,042,014 to **10,042,052** (out of 12,928,391 tree nodes). The parser is locked at
+`13.9|10:team|11:team|12:team` for all Milestone 3 tables.
+
+| Parser | Date | Change | Papers re-parsed | Carry-over verification |
+|---|---|---|---|---|
+| `13.7` | 21 Nov 2026 | First full run on all 20,000 papers | 20,000 (2 h 47 min) | — |
+| `13.8` | 22 Nov 2026 | CR-only line endings (`10`) and nested macro definitions (`11`) | 1,775 flagged + 300 random (47 min) | 300/300 random unchanged; 436 flagged changed |
+| `13.9` | 27 Nov 2026 | REVTeX `\bibinfo` extraction (`12`, 41 tests) | 190 with `\BibitemOpen` (`REPARSE_13_9`) + verification sample (31 min main session) | Non-REVTeX sample (128/128) and all 20 manual-label papers unchanged |
+
 ## 2.5.4 Output and checks
 
 At the end of each session, the three tables are rebuilt from `data/parsed/`: the files are read 500 at a

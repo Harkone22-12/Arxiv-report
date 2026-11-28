@@ -1,0 +1,415 @@
+{
+ "manual": {
+  "papers": 20,
+  "entries": 807,
+  "matched": 628,
+  "no_match_share": 0.2218,
+  "unsure_share": 0.0012,
+  "papers_per_member": {
+   "TV1": 5,
+   "TV2": 5,
+   "TV3": 5,
+   "TV4": 5
+  }
+ },
+ "manual_papers": [
+  {
+   "arxiv_id": "2603.20792",
+   "file": "2603-20792.csv",
+   "labeler": "La Anh Hao",
+   "member": "TV1",
+   "entries": 43,
+   "matched": 38,
+   "unsure": 0,
+   "n_refs": 38
+  },
+  {
+   "arxiv_id": "2603.21268",
+   "file": "2603-21268.csv",
+   "labeler": "La Anh Hao",
+   "member": "TV1",
+   "entries": 40,
+   "matched": 34,
+   "unsure": 0,
+   "n_refs": 34
+  },
+  {
+   "arxiv_id": "2603.24078",
+   "file": "2603-24078.csv",
+   "labeler": "La Anh Hao",
+   "member": "TV1",
+   "entries": 44,
+   "matched": 30,
+   "unsure": 0,
+   "n_refs": 30
+  },
+  {
+   "arxiv_id": "2603.24832",
+   "file": "2603-24832.csv",
+   "labeler": "La Anh Hao",
+   "member": "TV1",
+   "entries": 52,
+   "matched": 33,
+   "unsure": 0,
+   "n_refs": 33
+  },
+  {
+   "arxiv_id": "2603.25188",
+   "file": "2603-25188.csv",
+   "labeler": "La Anh Hao",
+   "member": "TV1",
+   "entries": 44,
+   "matched": 40,
+   "unsure": 0,
+   "n_refs": 41
+  },
+  {
+   "arxiv_id": "2605.07371",
+   "file": "2605-07371.csv",
+   "labeler": "Thinh",
+   "member": "TV4",
+   "entries": 35,
+   "matched": 22,
+   "unsure": 0,
+   "n_refs": 24
+  },
+  {
+   "arxiv_id": "2605.08524",
+   "file": "2605-08524.csv",
+   "labeler": "Thinh",
+   "member": "TV4",
+   "entries": 57,
+   "matched": 31,
+   "unsure": 1,
+   "n_refs": 30
+  },
+  {
+   "arxiv_id": "2605.08800",
+   "file": "2605-08800.csv",
+   "labeler": "Thinh",
+   "member": "TV4",
+   "entries": 26,
+   "matched": 21,
+   "unsure": 0,
+   "n_refs": 21
+  },
+  {
+   "arxiv_id": "2605.09264",
+   "file": "2605-09264.csv",
+   "labeler": "Thinh",
+   "member": "TV4",
+   "entries": 43,
+   "matched": 23,
+   "unsure": 0,
+   "n_refs": 23
+  },
+  {
+   "arxiv_id": "2605.11009",
+   "file": "2605-11009.csv",
+   "labeler": "Thinh",
+   "member": "TV4",
+   "entries": 48,
+   "matched": 46,
+   "unsure": 0,
+   "n_refs": 46
+  },
+  {
+   "arxiv_id": "2605.18240",
+   "file": "2605-18240.csv",
+   "labeler": "Quan",
+   "member": "TV3",
+   "entries": 27,
+   "matched": 22,
+   "unsure": 0,
+   "n_refs": 22
+  },
+  {
+   "arxiv_id": "2605.20037",
+   "file": "2605-20037.csv",
+   "labeler": "Quan",
+   "member": "TV3",
+   "entries": 42,
+   "matched": 21,
+   "unsure": 0,
+   "n_refs": 22
+  },
+  {
+   "arxiv_id": "2605.20813",
+   "file": "2605-20813.csv",
+   "labeler": "Quan",
+   "member": "TV3",
+   "entries": 32,
+   "matched": 32,
+   "unsure": 0,
+   "n_refs": 32
+  },
+  {
+   "arxiv_id": "2605.20894",
+   "file": "2605-20894.csv",
+   "labeler": "Quan",
+   "member": "TV3",
+   "entries": 34,
+   "matched": 32,
+   "unsure": 0,
+   "n_refs": 32
+  },
+  {
+   "arxiv_id": "2605.22074",
+   "file": "2605-22074.csv",
+   "labeler": "Quan",
+   "member": "TV3",
+   "entries": 48,
+   "matched": 41,
+   "unsure": 0,
+   "n_refs": 41
+  },
+  {
+   "arxiv_id": "2609.33082",
+   "file": "2609-33082.csv",
+   "labeler": "TV2",
+   "member": "TV2",
+   "entries": 33,
+   "matched": 31,
+   "unsure": 0,
+   "n_refs": 31
+  },
+  {
+   "arxiv_id": "2609.34897",
+   "file": "2609-34897.csv",
+   "labeler": "TV2",
+   "member": "TV2",
+   "entries": 36,
+   "matched": 23,
+   "unsure": 0,
+   "n_refs": 23
+  },
+  {
+   "arxiv_id": "2609.35222",
+   "file": "2609-35222.csv",
+   "labeler": "TV2",
+   "member": "TV2",
+   "entries": 36,
+   "matched": 32,
+   "unsure": 0,
+   "n_refs": 32
+  },
+  {
+   "arxiv_id": "2609.36062",
+   "file": "2609-36062.csv",
+   "labeler": "TV2",
+   "member": "TV2",
+   "entries": 56,
+   "matched": 45,
+   "unsure": 0,
+   "n_refs": 45
+  },
+  {
+   "arxiv_id": "2609.37042",
+   "file": "2609-37042.csv",
+   "labeler": "TV2",
+   "member": "TV2",
+   "entries": 31,
+   "matched": 31,
+   "unsure": 0,
+   "n_refs": 31
+  }
+ ],
+ "auto": {
+  "papers": 3753,
+  "entries": 158622,
+  "matched": 80701,
+  "rules": {
+   "none": 77921,
+   "title_exact": 38073,
+   "arxiv": 29846,
+   "doi": 11549,
+   "title_fuzzy": 1233
+  },
+  "fraction": 0.25
+ },
+ "params": {
+  "fuzzy": 80,
+  "min_tokens": 3,
+  "year_tol": 1
+ },
+ "tuning": [
+  {
+   "fuzzy": 80,
+   "min_tokens": 3,
+   "year_tol": 1,
+   "precision": 1.0,
+   "recall": 0.9972,
+   "f1": 0.9986
+  },
+  {
+   "fuzzy": 80,
+   "min_tokens": 4,
+   "year_tol": 1,
+   "precision": 1.0,
+   "recall": 0.9944,
+   "f1": 0.9972
+  },
+  {
+   "fuzzy": 80,
+   "min_tokens": 5,
+   "year_tol": 1,
+   "precision": 1.0,
+   "recall": 0.9917,
+   "f1": 0.9958
+  },
+  {
+   "fuzzy": 85,
+   "min_tokens": 3,
+   "year_tol": 1,
+   "precision": 1.0,
+   "recall": 0.9944,
+   "f1": 0.9972
+  },
+  {
+   "fuzzy": 85,
+   "min_tokens": 4,
+   "year_tol": 1,
+   "precision": 1.0,
+   "recall": 0.9917,
+   "f1": 0.9958
+  },
+  {
+   "fuzzy": 85,
+   "min_tokens": 5,
+   "year_tol": 1,
+   "precision": 1.0,
+   "recall": 0.9889,
+   "f1": 0.9944
+  },
+  {
+   "fuzzy": 90,
+   "min_tokens": 3,
+   "year_tol": 1,
+   "precision": 1.0,
+   "recall": 0.9944,
+   "f1": 0.9972
+  },
+  {
+   "fuzzy": 90,
+   "min_tokens": 4,
+   "year_tol": 1,
+   "precision": 1.0,
+   "recall": 0.9917,
+   "f1": 0.9958
+  },
+  {
+   "fuzzy": 90,
+   "min_tokens": 5,
+   "year_tol": 1,
+   "precision": 1.0,
+   "recall": 0.9889,
+   "f1": 0.9944
+  },
+  {
+   "fuzzy": 95,
+   "min_tokens": 3,
+   "year_tol": 1,
+   "precision": 1.0,
+   "recall": 0.9917,
+   "f1": 0.9958
+  },
+  {
+   "fuzzy": 95,
+   "min_tokens": 4,
+   "year_tol": 1,
+   "precision": 1.0,
+   "recall": 0.9889,
+   "f1": 0.9944
+  },
+  {
+   "fuzzy": 95,
+   "min_tokens": 5,
+   "year_tol": 1,
+   "precision": 1.0,
+   "recall": 0.9861,
+   "f1": 0.993
+  }
+ ],
+ "auto_vs_manual": {
+  "papers": 20,
+  "entries": 807,
+  "precision": 1.0,
+  "recall": 0.9952,
+  "f1": 0.9976,
+  "entry_accuracy": 0.9963,
+  "confusion": {
+   "correct": 625,
+   "wrong_ref": 0,
+   "missed": 3,
+   "false_match": 0,
+   "both_none": 179
+  },
+  "by_rule": [
+   {
+    "rule": "arxiv",
+    "n": 268,
+    "correct": 268,
+    "precision": 1.0
+   },
+   {
+    "rule": "doi",
+    "n": 49,
+    "correct": 49,
+    "precision": 1.0
+   },
+   {
+    "rule": "title_exact",
+    "n": 301,
+    "correct": 301,
+    "precision": 1.0
+   },
+   {
+    "rule": "title_fuzzy",
+    "n": 7,
+    "correct": 7,
+    "precision": 1.0
+   }
+  ]
+ },
+ "auto_vs_manual_held_out": {
+  "papers": 8,
+  "entries": 333,
+  "precision": 1.0,
+  "recall": 0.9925,
+  "f1": 0.9963,
+  "entry_accuracy": 0.994
+ },
+ "auto_share_outside_manual": 0.1878,
+ "split": {
+  "seed": 42,
+  "test": {
+   "manual": [
+    "2603.25188",
+    "2605.07371",
+    "2605.18240",
+    "2605.22074"
+   ],
+   "auto": [
+    "2605.11750",
+    "2605.17500",
+    "2609.33392",
+    "2609.36413"
+   ]
+  },
+  "valid": {
+   "manual": [
+    "2603.21268",
+    "2605.08524",
+    "2605.11009",
+    "2605.20894"
+   ],
+   "auto": [
+    "2603.25164",
+    "2605.18429",
+    "2609.33623",
+    "2609.36893"
+   ]
+  }
+ },
+ "seconds": 137.8
+}

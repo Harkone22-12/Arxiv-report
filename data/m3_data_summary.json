@@ -1,0 +1,94 @@
+{
+  "signature": "da32f6a848f6",
+  "built_at": "2026-11-27T14:07:41.899562+00:00",
+  "seconds": 1733.1,
+  "parser_version": "13.9|10:team|11:team|12:team",
+  "data_version": "20.3",
+  "papers": 20000,
+  "rows": {
+    "entries": 766398,
+    "refs": 383562,
+    "pubs": 20000
+  },
+  "stats": {
+    "cited_keys_not_in_bibtex": 93225,
+    "ref_duplicates_dropped": 0
+  },
+  "problems": [],
+  "summary": {
+    "papers": 20000,
+    "m2_status": {
+      "ok": 19038,
+      "empty_source": 955,
+      "no_root": 7
+    },
+    "s2_status": {
+      "ok": 19989,
+      "not_found": 11
+    },
+    "bib_source_of_papers_with_entries": {
+      "bib": 13835,
+      "bibitem": 3268
+    },
+    "papers_with_entries": 17103,
+    "papers_with_arxiv_refs": 17364,
+    "eligible": 15040,
+    "eligible_share": 0.752,
+    "entries": 766398,
+    "entries_in_eligible": 643139,
+    "cited_entry_share": 0.9851,
+    "refs_all": 724139,
+    "arxiv_refs": 383562,
+    "arxiv_ref_share": 0.5297,
+    "median_entries_per_eligible": 38.0,
+    "median_arxiv_refs_per_eligible": 18.0,
+    "candidate_pairs_in_eligible": 19790582,
+    "manual_pool": 8007,
+    "split_pool": 10389,
+    "parser_versions": {
+      "13.9|10:team|11:team|12:team": 20000
+    },
+    "by_member": {
+      "TV1": {
+        "papers": 5000,
+        "eligible": 3702,
+        "entries": 197148,
+        "arxiv_refs": 90986,
+        "manual_pool": 1762,
+        "manual_pool_bib": 1496,
+        "manual_pool_bibitem": 266
+      },
+      "TV2": {
+        "papers": 5000,
+        "eligible": 3681,
+        "entries": 176245,
+        "arxiv_refs": 98489,
+        "manual_pool": 2230,
+        "manual_pool_bib": 1978,
+        "manual_pool_bibitem": 252
+      },
+      "TV3": {
+        "papers": 5000,
+        "eligible": 3731,
+        "entries": 199275,
+        "arxiv_refs": 95452,
+        "manual_pool": 1881,
+        "manual_pool_bib": 1631,
+        "manual_pool_bibitem": 250
+      },
+      "TV4": {
+        "papers": 5000,
+        "eligible": 3926,
+        "entries": 193730,
+        "arxiv_refs": 98635,
+        "manual_pool": 2134,
+        "manual_pool_bib": 1887,
+        "manual_pool_bibitem": 247
+      }
+    },
+    "stats": {
+      "cited_keys_not_in_bibtex": 93225,
+      "ref_duplicates_dropped": 0
+    }
+  }
+}

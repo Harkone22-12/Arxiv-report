@@ -37,6 +37,12 @@ BLUE, ORANGE, AQUA, YELLOW, MAGENTA = "#2a78d6", "#eb6834", "#1baf7a", "#eda100"
 SERIES = [BLUE, ORANGE, AQUA, YELLOW, MAGENTA]
 INK, MUTED, GRID, AXIS, SURFACE = "#0b0b0b", "#898781", "#e1e0d9", "#c3c2b7", "#fcfcfb"
 
+PLOTLY_CONFIG = {
+    "displaylogo": False,
+    "responsive": True,
+    "toImageButtonOptions": {"format": "png", "scale": 2},
+}
+
 
 def check():
     """Stop the build with a clear message instead of publishing figures of missing data."""
@@ -47,19 +53,27 @@ def check():
             "(see README.md).")
 
 
-def style():
-    """Matplotlib defaults shared by every figure: light surface, hairline grid, no top/right spines."""
-    import matplotlib.pyplot as plt
-    plt.rcParams.update({
-        "figure.dpi": 110, "savefig.dpi": 160, "figure.facecolor": SURFACE, "axes.facecolor": SURFACE,
-        "axes.edgecolor": AXIS, "axes.labelcolor": "#52514e", "axes.titlecolor": INK,
-        "axes.titlesize": 11, "axes.titleweight": "bold", "axes.titlelocation": "left", "axes.labelsize": 9.5,
-        "axes.grid": True, "grid.color": GRID, "grid.linewidth": 0.8, "axes.axisbelow": True,
-        "axes.spines.top": False, "axes.spines.right": False,
-        "xtick.color": MUTED, "ytick.color": MUTED, "xtick.labelcolor": "#52514e", "ytick.labelcolor": "#52514e",
-        "xtick.labelsize": 9, "ytick.labelsize": 9, "legend.frameon": False, "legend.fontsize": 9,
-        "font.size": 9.5, "lines.linewidth": 2,
-    })
+def show(fig, height=380, margin=None):
+    """Display an interactive Plotly figure using the native Jupyter Book 2 (MyST) Plotly mimebundle."""
+    m = dict(l=55, r=25, t=60, b=45)
+    if margin:
+        m.update(margin)
+    fig.update_layout(
+        template="plotly_white",
+        height=height,
+        paper_bgcolor=SURFACE,
+        plot_bgcolor=SURFACE,
+        font=dict(color="#2f2e2c", size=12),
+        title=dict(x=0.0, xanchor="left", font=dict(size=14, color=INK)),
+        margin=m,
+        hoverlabel=dict(font_size=12),
+        legend=dict(bgcolor="rgba(0,0,0,0)"),
+    )
+    fig.update_xaxes(gridcolor=GRID, linecolor=AXIS, zerolinecolor=GRID)
+    fig.update_yaxes(gridcolor=GRID, linecolor=AXIS, zerolinecolor=GRID)
+    payload = json.loads(fig.to_json())
+    payload["config"] = PLOTLY_CONFIG
+    display({"application/vnd.plotly.v1+json": payload}, raw=True)
 
 
 def md(text):

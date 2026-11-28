@@ -1,0 +1,5 @@
+side,group,n,has_title,has_authors,has_year,has_arxiv_hint,has_doi,arxiv_venue,has_context
+entry,all entries,766398,0.992,0.9936,0.989,0.2479,0.3312,0.2525,0.9841
+entry,bib,650559,0.9974,0.9962,0.9934,0.27,0.3486,0.275,0.989
+entry,bibitem,115839,0.9613,0.9788,0.9646,0.124,0.2335,0.126,0.9564
+reference,all references,383562,1.0,1.0,1.0,,0.9295,,

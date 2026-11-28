@@ -1,0 +1,339 @@
+{
+ "ok": true,
+ "inputs": [
+  {
+   "name": "entries",
+   "state": "ok",
+   "rows": 766398,
+   "owner": "TV1",
+   "written_by": "20_m3_data",
+   "path": "data/m3/entries.parquet",
+   "error": ""
+  },
+  {
+   "name": "refs",
+   "state": "ok",
+   "rows": 383562,
+   "owner": "TV1",
+   "written_by": "20_m3_data",
+   "path": "data/m3/refs.parquet",
+   "error": ""
+  },
+  {
+   "name": "pubs",
+   "state": "ok",
+   "rows": 20000,
+   "owner": "TV1",
+   "written_by": "20_m3_data",
+   "path": "data/m3/pubs.parquet",
+   "error": ""
+  },
+  {
+   "name": "m3_data_summary",
+   "state": "ok",
+   "rows": null,
+   "owner": "TV1",
+   "written_by": "20_m3_data",
+   "path": "logs/m3_data_summary.json",
+   "error": ""
+  },
+  {
+   "name": "m2_stats",
+   "state": "ok",
+   "rows": null,
+   "owner": "TV1",
+   "written_by": "15_run_parsing",
+   "path": "logs/m2_stats.json",
+   "error": ""
+  },
+  {
+   "name": "m2_benchmark",
+   "state": "ok",
+   "rows": null,
+   "owner": "TV1",
+   "written_by": "15_run_parsing",
+   "path": "logs/m2_benchmark.json",
+   "error": ""
+  },
+  {
+   "name": "selection",
+   "state": "ok",
+   "rows": 20,
+   "owner": "TV2",
+   "written_by": "21_labeling",
+   "path": "labels/selection.csv",
+   "error": ""
+  },
+  {
+   "name": "auto_labels",
+   "state": "ok",
+   "rows": 158622,
+   "owner": "TV2",
+   "written_by": "21_labeling",
+   "path": "labels/auto/auto_labels.parquet",
+   "error": ""
+  },
+  {
+   "name": "split",
+   "state": "ok",
+   "rows": null,
+   "owner": "TV2",
+   "written_by": "21_labeling",
+   "path": "labels/split.json",
+   "error": ""
+  },
+  {
+   "name": "labels",
+   "state": "ok",
+   "rows": 159429,
+   "owner": "TV2",
+   "written_by": "21_labeling",
+   "path": "labels/labels.parquet",
+   "error": ""
+  },
+  {
+   "name": "label_report",
+   "state": "ok",
+   "rows": null,
+   "owner": "TV2",
+   "written_by": "21_labeling",
+   "path": "logs/m3_labels.json",
+   "error": ""
+  },
+  {
+   "name": "pairs",
+   "state": "ok",
+   "rows": 4821691,
+   "owner": "TV3",
+   "written_by": "22_features",
+   "path": "data/m3/pairs.parquet",
+   "error": ""
+  },
+  {
+   "name": "feature_report",
+   "state": "ok",
+   "rows": 25,
+   "owner": "TV3",
+   "written_by": "22_features",
+   "path": "logs/m3_feature_report.csv",
+   "error": ""
+  },
+  {
+   "name": "cleaning_report",
+   "state": "ok",
+   "rows": 4,
+   "owner": "TV3",
+   "written_by": "22_features",
+   "path": "logs/m3_cleaning_report.csv",
+   "error": ""
+  },
+  {
+   "name": "predictions",
+   "state": "ok",
+   "rows": 81329,
+   "owner": "TV3",
+   "written_by": "23_model",
+   "path": "data/m3/predictions.parquet",
+   "error": ""
+  },
+  {
+   "name": "metrics",
+   "state": "ok",
+   "rows": null,
+   "owner": "TV3",
+   "written_by": "23_model",
+   "path": "logs/m3_metrics.json",
+   "error": ""
+  },
+  {
+   "name": "model_selection",
+   "state": "ok",
+   "rows": 14,
+   "owner": "TV3",
+   "written_by": "23_model",
+   "path": "logs/m3_model_selection.csv",
+   "error": ""
+  },
+  {
+   "name": "manual_sheets",
+   "state": "ok",
+   "rows": 807,
+   "owner": "all",
+   "written_by": "each member",
+   "path": "labels/manual/*.csv",
+   "error": ""
+  },
+  {
+   "name": "manual_old",
+   "state": "ok",
+   "rows": 10,
+   "owner": "all",
+   "written_by": "each member",
+   "path": "labels/manual_old/*.csv",
+   "error": ""
+  }
+ ],
+ "checks": [
+  {
+   "check": "manual_pubs",
+   "expected": ">= 20",
+   "actual": "20",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "manual_pubs_per_member",
+   "expected": ">= 5 each",
+   "actual": "{'TV1': 5, 'TV2': 5, 'TV3': 5, 'TV4': 5}",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "manual_pairs_per_pub",
+   "expected": ">= 20 matched pairs",
+   "actual": "21",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "manual_pairs_total",
+   "expected": ">= 400 matched pairs",
+   "actual": "628 pairs in 807 entries",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "one_label_per_entry",
+   "expected": "no duplicate",
+   "actual": "0",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "every_entry_labelled",
+   "expected": "all entries of each labelled publication",
+   "actual": "0 missing, 0 unknown",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "labels_point_to_own_refs",
+   "expected": "references of the same publication",
+   "actual": "0",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "auto_pubs_min",
+   "expected": ">= 8",
+   "actual": "3753",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "auto_not_hand_labelled",
+   "expected": "no hand-labelled publication",
+   "actual": "0",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "auto_share",
+   "expected": ">= 10%",
+   "actual": "18.8%",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "auto_share_per_member",
+   "expected": ">= 10% each",
+   "actual": "{'TV1': '17.6%', 'TV2': '17.8%', 'TV3': '19.5%', 'TV4': '20.3%'}",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "split_test_manual",
+   "expected": "= 4",
+   "actual": "4",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "split_test_auto",
+   "expected": "= 4",
+   "actual": "4",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "split_valid_manual",
+   "expected": "= 4",
+   "actual": "4",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "split_valid_auto",
+   "expected": "= 4",
+   "actual": "4",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "split_consistent",
+   "expected": "disjoint, labelled, source matches",
+   "actual": "train: 12 manual, 3745 auto",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "mrr_nil_mode",
+   "expected": "= skip",
+   "actual": "skip (test MRR@5 1.0000)",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "pred_columns",
+   "expected": "the columns of the statement",
+   "actual": "9",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "pred_publications",
+   "expected": "labelled publications with a pair",
+   "actual": "3733 (40 labelled without a pair)",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "pred_rows",
+   "expected": "one row per entry with a true reference",
+   "actual": "81,329 rows",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "pred_partition",
+   "expected": "as split.json",
+   "actual": "{'train': 3717, 'test': 8, 'valid': 8}",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "pred_groundtruth",
+   "expected": "as the labels",
+   "actual": "0 differ",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "pred_candidates",
+   "expected": "own references, no repeat, no gap",
+   "actual": "0 bad rows",
+   "status": "PASS",
+   "detail": ""
+  }
+ ]
+}

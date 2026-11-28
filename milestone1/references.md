@@ -78,7 +78,10 @@ used. The `date_source` field records which one was used, and the completeness o
 ```
 
 The file is written even when Semantic Scholar does not know the paper (empty list, `status: "not_found"`),
-so every paper folder is complete. A failed request never overwrites a file that an earlier run saved
+so every paper folder is complete. Across all 20,000 assigned papers, **19,989** finished with `status: "ok"`
+(99.94%) and **11** remained `status: "not_found"` (HTTP 404 / `null` in the batch response) with 0 final
+errors; the complete list of those 11 papers and the reconciliation against `references_log.csv` are reported
+in [3.3](statistics.ipynb). A failed request never overwrites a file that an earlier run saved
 successfully. Entries with neither a Semantic Scholar ID nor a title carry no information; they are dropped
 and counted in `n_dropped`.
 
@@ -92,7 +95,7 @@ arXiv-keyed references.
 |---|---|
 | Rate limit | one shared limiter for all threads: one request every `S2_DELAY` seconds with an API key, and never faster than one every 3 s without one (to stay under 100 requests per 5 minutes) |
 | HTTP 429, 5xx, timeout | retry up to 8 times (`S2_RETRIES`), waiting 2 s, 4 s, 8 s, … up to 60 s (or the server's `Retry-After`), plus up to 1 s of random jitter |
-| Paper not indexed | `null` in the batch answer, `status: "not_found"`; common for very recent papers, which Semantic Scholar indexes with some days of delay |
+| Paper not indexed | `null` in the batch answer, `status: "not_found"` (HTTP 404 on single lookup); `references.json` is still written with an empty list and `status: "not_found"`. Eleven papers stayed `not_found` after retries ([3.3](statistics.ipynb)) |
 | Batch answer reaches 9,999 references | split the batch in two and ask again, until every answer is below the cap |
 | HTTP 400 / 401 / 403 | not retried; the error is logged, and 401/403 adds a hint to check `S2_API_KEY` |
 | Batch still failing after 8 attempts | its papers get `status: "error"`; the next run asks for them again |

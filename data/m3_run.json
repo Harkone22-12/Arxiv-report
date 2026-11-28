@@ -1,0 +1,251 @@
+{
+  "runs": [
+    {
+      "at": "2026-11-28T12:47:45.433932+00:00",
+      "commit": "8c3ee1a 20_export_hf and QA improve",
+      "root": "/content/drive/MyDrive/arxiv-project",
+      "parser": "13.9|10:team|11:team|12:team",
+      "steps_asked": [
+        "data",
+        "labels",
+        "features",
+        "model",
+        "analysis",
+        "export"
+      ],
+      "steps": {
+        "data": {
+          "status": "ok",
+          "seconds": 3.8,
+          "signature": "da32f6a848f6",
+          "built_at": "2026-11-27T14:07:41.899562+00:00",
+          "rows": {
+            "entries": 766398,
+            "refs": 383562,
+            "pubs": 20000
+          },
+          "papers": 20000,
+          "eligible": 15040
+        },
+        "labels": {
+          "status": "ok",
+          "seconds": 138.8,
+          "manual": {
+            "papers": 20,
+            "entries": 807,
+            "matched": 628,
+            "no_match_share": 0.2218,
+            "unsure_share": 0.0012,
+            "papers_per_member": {
+              "TV1": 5,
+              "TV2": 5,
+              "TV3": 5,
+              "TV4": 5
+            }
+          },
+          "auto": {
+            "papers": 3753,
+            "entries": 158622,
+            "matched": 80701,
+            "fraction": 0.25
+          },
+          "auto_share_outside_manual": 0.1878,
+          "split": {
+            "seed": 42,
+            "test": {
+              "manual": [
+                "2603.25188",
+                "2605.07371",
+                "2605.18240",
+                "2605.22074"
+              ],
+              "auto": [
+                "2605.11750",
+                "2605.17500",
+                "2609.33392",
+                "2609.36413"
+              ]
+            },
+            "valid": {
+              "manual": [
+                "2603.21268",
+                "2605.08524",
+                "2605.11009",
+                "2605.20894"
+              ],
+              "auto": [
+                "2603.25164",
+                "2605.18429",
+                "2609.33623",
+                "2609.36893"
+              ]
+            }
+          },
+          "auto_vs_manual": {
+            "precision": 1.0,
+            "recall": 0.9952,
+            "f1": 0.9976
+          },
+          "auto_vs_manual_held_out": {
+            "precision": 1.0,
+            "recall": 0.9925,
+            "f1": 0.9963
+          },
+          "params": {
+            "fuzzy": 80,
+            "min_tokens": 3,
+            "year_tol": 1
+          }
+        },
+        "features": {
+          "status": "ok",
+          "seconds": 1421.6,
+          "pairs": 4821691,
+          "entries": 159429,
+          "papers": 3773,
+          "entries_per_partition": {
+            "train": 158640,
+            "valid": 439,
+            "test": 350
+          },
+          "positive_pairs": 81329
+        },
+        "model": {
+          "status": "ok",
+          "seconds": 4019.5,
+          "chosen": "baseline",
+          "tau": null,
+          "nil_mode_main": "skip",
+          "final": {
+            "train": {
+              "mrr5_zero": 0.5089668431669188,
+              "mrr5_skip": 0.9999814227682552,
+              "hit1": 0.9999628455365105,
+              "hit5": 1.0,
+              "n_entries": 158640,
+              "n_with_true_ref": 80744,
+              "n_papers": 3757
+            },
+            "valid": {
+              "mrr5_zero": 0.724373576309795,
+              "mrr5_skip": 1.0,
+              "hit1": 1.0,
+              "hit5": 1.0,
+              "n_entries": 439,
+              "n_with_true_ref": 318,
+              "n_papers": 8
+            },
+            "test": {
+              "mrr5_zero": 0.7628571428571429,
+              "mrr5_skip": 1.0,
+              "hit1": 1.0,
+              "hit5": 1.0,
+              "n_entries": 350,
+              "n_with_true_ref": 267,
+              "n_papers": 8
+            }
+          },
+          "predictions_rows": 81329,
+          "predictions_papers": 3733
+        },
+        "analysis": {
+          "status": "skipped",
+          "seconds": 0.0
+        },
+        "export": {
+          "status": "ok",
+          "seconds": 1039.0,
+          "rows": {
+            "TV1": {
+              "papers": 5000,
+              "references": 90986,
+              "elements": 2318540,
+              "hierarchy": 3132974,
+              "bibtex": 197148,
+              "predictions": 18285
+            },
+            "TV2": {
+              "papers": 5000,
+              "references": 98489,
+              "elements": 2756794,
+              "hierarchy": 3242138,
+              "bibtex": 176245,
+              "predictions": 19558
+            },
+            "TV3": {
+              "papers": 5000,
+              "references": 95452,
+              "elements": 2430388,
+              "hierarchy": 3166732,
+              "bibtex": 199275,
+              "predictions": 21619
+            },
+            "TV4": {
+              "papers": 5000,
+              "references": 98635,
+              "elements": 2536330,
+              "hierarchy": 3360787,
+              "bibtex": 193730,
+              "predictions": 21867
+            }
+          },
+          "export_seconds": 1027.2,
+          "papers_outside_ranges": {
+            "papers": 0,
+            "references": 0,
+            "elements": 0,
+            "hierarchy": 0,
+            "bibtex": 0,
+            "predictions": 0
+          }
+        }
+      },
+      "seconds": 6622.7,
+      "stale": []
+    },
+    {
+      "at": "2026-11-28T14:58:28.306734+00:00",
+      "commit": "689e914 Merge branch 'm3-analysis' into m3-labeling",
+      "root": "/content/drive/MyDrive/arxiv-project",
+      "parser": "13.9|10:team|11:team|12:team",
+      "steps_asked": [
+        "analysis"
+      ],
+      "steps": {
+        "analysis": {
+          "status": "ok",
+          "seconds": 139.8,
+          "ok": true,
+          "status_counts": {
+            "PASS": 23
+          },
+          "not_passed": []
+        }
+      },
+      "seconds": 139.8,
+      "stale": []
+    },
+    {
+      "at": "2026-11-28T15:01:05.296724+00:00",
+      "commit": "689e914 Merge branch 'm3-analysis' into m3-labeling",
+      "root": "/content/drive/MyDrive/arxiv-project",
+      "parser": "13.9|10:team|11:team|12:team",
+      "steps_asked": [
+        "analysis"
+      ],
+      "steps": {
+        "analysis": {
+          "status": "ok",
+          "seconds": 132.8,
+          "ok": true,
+          "status_counts": {
+            "PASS": 23
+          },
+          "not_passed": []
+        }
+      },
+      "seconds": 132.8,
+      "stale": []
+    }
+  ]
+}

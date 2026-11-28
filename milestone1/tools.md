@@ -21,7 +21,7 @@
 | concurrency | `concurrent.futures.ThreadPoolExecutor`, `threading` (extraction workers, reference thread, monitor thread, locks) | `02`, `03`, `04`, `05` |
 | monitoring | `psutil` (resident memory), `time.perf_counter` (wall clock), receipts or a `du`-style walk for disk (`MEASURE_DISK`) | `04_monitor.ipynb`, `05_run_pipeline.ipynb` |
 | progress | `tqdm` bars (discovery, papers, current file and MB left) | `01`, `02` |
-| analysis and figures | `pandas`, `matplotlib` | `04_monitor.ipynb`, this report |
+| analysis and figures | `pandas`, `matplotlib` (pipeline logs); `plotly` (interactive report charts) | `04_monitor.ipynb`, this report |
 | notebooks as modules | `%run -i` to load notebooks 00–04 into the pipeline | `05_run_pipeline.ipynb` |
 
 The pinned ranges are in `src/requirements.txt`: `arxiv>=4.0,<5`, `requests>=2.31`, `psutil>=5.9`,

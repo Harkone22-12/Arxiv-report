@@ -3,3 +3,4 @@ ipykernel
 jupyter-server
 pandas
 matplotlib
+plotly

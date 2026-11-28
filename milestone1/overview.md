@@ -41,15 +41,15 @@ how much memory and disk, and chapter [5](conclusion.ipynb) the conclusions and 
 | Requirement of the statement | How the scraper meets it | Described in |
 |---|---|---|
 | Crawl **every version** of each paper; a single-submission paper uses `v1` | discovery reads the number of versions from the versioned ID of the latest version; the downloader requests `/src/{id}v{N}` for every `N` | [2.1](discovery.md), [2.2](download.md) |
-| Use the `export.arxiv.org` mirror, a descriptive User-Agent, one connection, 3 s between requests | one `requests` session, a gate that spaces the *starts* of all requests (retries included) by `ARXIV_DELAY = 3.0` s | [2.2](download.md) |
-| Keep **only `.tex` and `.bib`** files, by extraction; no figure binaries | the extractor writes only members with these two extensions; the archive is deleted after unpacking | [2.3](extraction.md) |
+| Use the `export.arxiv.org` mirror, a descriptive User-Agent, one connection, 3 s between requests | one `requests` session with a single-connection gate (`ARXIV_DELAY = 3.0` s) plus adaptive retry/cooldown; threads are used only for local extraction/Drive I/O and the separate Semantic Scholar API | [2.2](download.md) |
+| Keep **only `.tex` and `.bib`** files, by extraction; no figure binaries | the extractor writes only members with these two extensions; the archive is deleted after unpacking (`.bbl` handling is documented in [2.3](extraction.md)) | [2.3](extraction.md) |
 | Leave `figure` environments and `\includegraphics` untouched | the kept files are copied byte for byte; nothing in the TeX is edited | [2.3](extraction.md) |
-| A version with no LaTeX source keeps an empty record | empty `vN/` folder and an `empty_source` receipt | [2.3](extraction.md) |
-| Paper metadata for each version (title, authors, dates, venue) | `metadata.json` with one `version_info` record per version | [2.1](discovery.md) |
-| Reference metadata from Semantic Scholar; keep all references, only arXiv-keyed ones become `references` rows | batch endpoint with flat fields; `references.json` keeps everything, `references_rows()` filters on the arXiv ID | [2.4](references.md) |
+| A version with no LaTeX source (or HTTP 404 at `/src/`) keeps an empty record | PDF-only versions get an empty `vN/` folder and `empty_source` receipt; persistent HTTP 404 versions are marked failed (`NOT_FOUND`) and carried into Milestone 2 as empty records (`empty_source`, reason `not_found`) | [2.2](download.md), [2.3](extraction.md), [3.1](statistics.ipynb) |
+| Paper metadata for each version (title, authors, dates, venue) | `metadata.json` with one `version_info` record per version; crawl snapshot dates documented | [2.1](discovery.md) |
+| Reference metadata from Semantic Scholar; keep all references, only arXiv-keyed ones become `references` rows | batch endpoint with flat fields; one `references.json` per publication (Semantic Scholar does not separate versions), `references_rows()` filters on the arXiv ID; 404s logged and kept as empty records | [2.4](references.md), [3.3](statistics.ipynb) |
 | Tables `papers` and `references` with the given columns | `papers_rows()` and `references_rows()` build them from the saved files | [1.5](#tables) |
-| Report statistics: papers scraped, success rate, size before/after, references per paper, reference success rate | computed from the crawl's logs when the book is built | [3](statistics.ipynb) |
-| Report performance: time per paper, average, discovery time, peak and average RAM, maximum disk, output size, measured on CPU-only Colab | session records, receipts and a `psutil` monitor thread | [4](performance.ipynb) |
+| Report statistics: papers scraped, success rate, size before/after, references per paper, reference success rate | computed from the crawl's logs when the book is built, across all 20,000 assigned IDs | [3](statistics.ipynb) |
+| Report performance: time per paper, average, discovery time, peak and average RAM, maximum disk, output size, measured on CPU-only Colab | 30 Colab session records (retries and waits included), receipts and a `psutil` monitor thread, summed over the full 20,000-ID corpus | [4](performance.ipynb) |
 | Figures and tables generated at compilation, no screenshots | chapters 3–5 are notebooks executed by the build | [3](statistics.ipynb), [4](performance.ipynb) |
 
 ## 1.3 Pipeline
@@ -91,11 +91,22 @@ Three design decisions shape everything else:
 `src/06_test_100_versions.ipynb` runs the same pipeline on the first 100 source versions only, in a separate
 folder, and checks the result; every change was tested with it before the full crawl.
 
-## 1.4 Data layout
+## 1.4 Data layout and organization decisions
 
-The corpus follows the convention suggested by the statement: one folder per paper, named after its ID with
-the dot replaced by a hyphen, containing the `.tex` and `.bib` files of every version and the metadata of
-the paper and of its references.
+The statement's working folder layout is a suggestion, and our group adapted it deliberately: one folder per
+paper, named after its ID with the dot replaced by a hyphen, containing the `.tex` and `.bib` files of every
+version, one `metadata.json` holding per-version metadata, and one `references.json` for the publication.
+
+- **Why one `references.json` per publication instead of per version.** The Semantic Scholar Graph API
+  returns one reference list per arXiv publication and does not distinguish individual arXiv revisions (a
+  versioned ID such as `2609.32867v1` returns `null`). Duplicating the same list inside every `vN/` folder
+  would waste storage without adding version granularity. Instead, we store `references.json` once at the
+  paper level and preserve every version's submission and revision dates in `metadata.json` (`submitted`,
+  `revised`, `version_info`), which populates `revised_dates` in the `papers` table.
+- **Why multi-session checkpoints on Google Drive.** The final benchmark ran on all 20,000 assigned IDs on a
+  CPU-only Google Colab runtime. Because 27,035 versions at ≥ 3 s per request exceed Colab's ~12-hour session
+  limit, we split execution across 30 resumable sessions, kept every per-session log in
+  `benchmark_sessions.jsonl`, and summed them in `benchmark.json` (chapter [4](performance.ipynb)).
 
 ```text
 MyDrive/arxiv-project/

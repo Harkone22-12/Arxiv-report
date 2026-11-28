@@ -1,0 +1,166 @@
+{
+  "runs": [
+    {
+      "members": [
+        "TV1",
+        "TV2",
+        "TV3",
+        "TV4"
+      ],
+      "tables": {
+        "papers": {
+          "source_rows": 20000,
+          "members": {
+            "TV1": {
+              "rows": 5000,
+              "shards": 1
+            },
+            "TV2": {
+              "rows": 5000,
+              "shards": 1
+            },
+            "TV3": {
+              "rows": 5000,
+              "shards": 1
+            },
+            "TV4": {
+              "rows": 5000,
+              "shards": 1
+            }
+          },
+          "rows_not_exported": 0,
+          "papers_outside_ranges": 0,
+          "outside_examples": [],
+          "seconds": 634.2
+        },
+        "references": {
+          "source_rows": 383562,
+          "members": {
+            "TV1": {
+              "rows": 90986,
+              "shards": 1
+            },
+            "TV2": {
+              "rows": 98489,
+              "shards": 1
+            },
+            "TV3": {
+              "rows": 95452,
+              "shards": 1
+            },
+            "TV4": {
+              "rows": 98635,
+              "shards": 1
+            }
+          },
+          "rows_not_exported": 0,
+          "papers_outside_ranges": 0,
+          "outside_examples": [],
+          "seconds": 313.8
+        },
+        "elements": {
+          "source_rows": 10042052,
+          "members": {
+            "TV1": {
+              "rows": 2318540,
+              "shards": 2
+            },
+            "TV2": {
+              "rows": 2756794,
+              "shards": 3
+            },
+            "TV3": {
+              "rows": 2430388,
+              "shards": 2
+            },
+            "TV4": {
+              "rows": 2536330,
+              "shards": 2
+            }
+          },
+          "rows_not_exported": 0,
+          "papers_outside_ranges": 0,
+          "outside_examples": [],
+          "seconds": 51.6
+        },
+        "hierarchy": {
+          "source_rows": 12902631,
+          "members": {
+            "TV1": {
+              "rows": 3132974,
+              "shards": 1
+            },
+            "TV2": {
+              "rows": 3242138,
+              "shards": 1
+            },
+            "TV3": {
+              "rows": 3166732,
+              "shards": 1
+            },
+            "TV4": {
+              "rows": 3360787,
+              "shards": 1
+            }
+          },
+          "rows_not_exported": 0,
+          "papers_outside_ranges": 0,
+          "outside_examples": [],
+          "seconds": 15.7
+        },
+        "bibtex": {
+          "source_rows": 766398,
+          "members": {
+            "TV1": {
+              "rows": 197148,
+              "shards": 1
+            },
+            "TV2": {
+              "rows": 176245,
+              "shards": 1
+            },
+            "TV3": {
+              "rows": 199275,
+              "shards": 1
+            },
+            "TV4": {
+              "rows": 193730,
+              "shards": 1
+            }
+          },
+          "rows_not_exported": 0,
+          "papers_outside_ranges": 0,
+          "outside_examples": [],
+          "seconds": 11.2
+        },
+        "predictions": {
+          "source_rows": 81329,
+          "members": {
+            "TV1": {
+              "rows": 18285,
+              "shards": 1
+            },
+            "TV2": {
+              "rows": 19558,
+              "shards": 1
+            },
+            "TV3": {
+              "rows": 21619,
+              "shards": 1
+            },
+            "TV4": {
+              "rows": 21867,
+              "shards": 1
+            }
+          },
+          "rows_not_exported": 0,
+          "papers_outside_ranges": 0,
+          "outside_examples": [],
+          "seconds": 0.5
+        }
+      },
+      "seconds": 1027.2,
+      "at": "2026-11-28 14:37:56"
+    }
+  ]
+}

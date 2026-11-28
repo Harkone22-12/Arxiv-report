@@ -69,7 +69,7 @@ files into the `papers` table of the statement ([1.5](overview.md#tables)).
 - Old-style IDs (`hep-th/9711200`) are supported by the ID helpers and tested, although all assigned ranges
   are new-style.
 
-## 2.1.5 Checkpoints and resume
+## 2.1.5 Checkpoints, crawl dates and resume
 
 `resolve_discovery_batches` saves every finished batch of 100 IDs to `state/discovery_batches/` **before**
 the next API call, and `discover_all` merges them into `state/discovery_manifest.json`. A batch that still
@@ -78,3 +78,18 @@ saved batches and only queries the IDs that are missing or ended in `error`. The
 added up in the manifest (`discovery_seconds`), which is the **entry discovery time** of the benchmark.
 In the later sessions of the crawl, discovery only checks that the manifest is complete, which takes a few
 seconds.
+
+**Crawl dates and version snapshot.** Because arXiv continuously receives new revisions (`v2`, `v3`, …), the
+corpus reflects the version list captured by the discovery manifest:
+
+- The latest revision date recorded across all 20,000 papers in `metadata.csv` is **2026-10-30** (all 20,000
+  assigned IDs existed on arXiv, totalling 27,035 versions).
+- The main Colab crawl ran from **2026-11-02 to 2026-11-06**, followed by a final retry session on
+  **2026-11-09** and a corpus integrity check on **2026-11-11** (followed by the repair run of
+  `src/09_repair_missing_sources.ipynb` before Milestone 2).
+- Any new arXiv version uploaded after the discovery snapshot is intentionally excluded so that all three
+  milestones operate on a fixed, reproducible set of 27,035 versions.
+- *Team progress checkpoints (working notes):* during development, the group saved intermediate snapshots on
+  **20 Oct**, **26 Oct**, **2 Nov** and **6 Nov 2026**; a spot check on **9 Nov 2026** against an earlier
+  25 Oct snapshot of one member's 5,000-ID range observed 24 newly uploaded revisions, illustrating why the
+  discovery timestamp must be frozen and documented in the report.

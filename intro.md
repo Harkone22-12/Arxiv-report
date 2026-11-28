@@ -6,26 +6,28 @@ Technology, University of Science, VNU-HCM).
 The project follows scientific papers from **arXiv** through three milestones: crawling the LaTeX sources
 and metadata of an assigned range of papers, parsing them into a structured corpus, and matching their
 bibliography entries to the papers they cite. This book documents the methods, the resulting data and the
-performance of each milestone; it currently covers **Milestone 1 — Data Crawling** and **Milestone 2 —
-Parsing and Standardization**.
+performance of all three milestones: **Milestone 1 — Data Crawling**, **Milestone 2 — Parsing and
+Standardization**, and **Milestone 3 — Reference Matching**.
 
 - **Report (this site):** <https://harkone22-12.github.io/Arxiv-report/> · source:
   <https://github.com/Harkone22-12/Arxiv-report>
 - **Code repository:** <https://github.com/thinhelzan842/intro-ds-arxiv-project> (source in `src/`, set-up
   and run instructions in `README.md`)
 - **Project statement:** [Milestone 1 — Crawling](https://hcmus-cs-ta.github.io/lab-book/intro-ds/statement/crawling/),
-  [Milestone 2 — Parsing](https://hcmus-cs-ta.github.io/lab-book/intro-ds/statement/parsing/)
+  [Milestone 2 — Parsing](https://hcmus-cs-ta.github.io/lab-book/intro-ds/statement/parsing/),
+  [Milestone 3 — Matching](https://hcmus-cs-ta.github.io/lab-book/intro-ds/statement/matching/)
 
 ## Team
 
-| Student ID | Name | Milestone 1 | Milestone 2 |
-| :---: | :--- | :--- | :--- |
-| `24127361` | La Anh Hào | entry discovery, coordination, pipeline (`00_config`, `01_discovery`, `05_run_pipeline`) | element IDs, full-text deduplication, tables, the run over all papers (`13_dedup_export`, `15_run_parsing`, `16_test_m2_1000_papers`) |
-| `24127016` | Võ Nguyễn Vân Anh | source download and extraction (`02_download`) | root file, multi-file gathering, document tree (`10_parse_tree`) |
-| `24127223` | Lưu Minh Quân | reference metadata (`03_references`) | BibTeX extraction, reference deduplication (`12_bibtex`) |
-| `24127244` | Phạm Tấn Nhật Thịnh | monitoring, statistics, report (`04_monitor`, this book) | macros, cleanup, math, sentences (`11_normalize`) |
+| Student ID | Name | Milestone 1 | Milestone 2 | Milestone 3 |
+| :---: | :--- | :--- | :--- | :--- |
+| `24127361` | La Anh Hào | entry discovery, coordination, pipeline (`00_config`, `01_discovery`, `05_run_pipeline`) | element IDs, full-text deduplication, tables, the run over all papers (`13_dedup_export`, `15_run_parsing`, `16_test_m2_1000_papers`) | input tables, pipeline runner, Hugging Face export (`20_m3_data`, `25_run_m3`, `26_export_hf`) |
+| `24127016` | Võ Nguyễn Vân Anh | source download and extraction (`02_download`) | root file, multi-file gathering, document tree (`10_parse_tree`) | manual sheets, automatic matcher, split (`21_labeling`) |
+| `24127223` | Lưu Minh Quân | reference metadata (`03_references`) | BibTeX extraction, reference deduplication (`12_bibtex`) | cleaning, 25 features, models, evaluation (`22_features`, `23_model`) |
+| `24127244` | Phạm Tấn Nhật Thịnh | monitoring, statistics, report (`04_monitor`, this book) | macros, cleanup, math, sentences (`11_normalize`) | requirement checks (`24_analysis`), report, poster |
 
-Everyone took part in the tests and in keeping the Colab sessions running.
+Everyone took part in the tests, in manual reference labelling (5 papers each), and in keeping the Colab
+sessions running.
 
 ## Objectives
 
@@ -51,6 +53,17 @@ Everyone took part in the tests and in keeping the Colab sessions running.
 4. **Measure the result.** Report the parse success rate, the version coverage, the counts before and after
    deduplication, and the time, RAM and output size of the parser on a CPU-only Colab runtime.
 
+**Milestone 3 — Reference matching.**
+
+1. **Label ground truth.** Manually label 5 publications per member (20 papers, 628 matched pairs) and run a
+   tuned rule-based automatic matcher over 25% of eligible non-manual papers (3,753 papers, 80,701 pairs).
+2. **Engineer features and rank.** Build 25 classical features across 4,821,691 within-paper candidate pairs
+   (including Milestone 2 citation contexts) and select among 14 classical configurations by grouped CV + valid
+   MRR@5.
+3. **Evaluate honestly and publish.** Report MRR@5 (`skip` and `zero`), analyse saturation with ablation,
+   LOPO and NIL-detection curves, verify all 23 statement/Q&A checks, and export 6 sharded Parquet tables per
+   member to Hugging Face.
+
 ## Pipeline
 
 ```text
@@ -61,15 +74,17 @@ Milestone 1 · Data crawling
     → reference metadata from Semantic Scholar
          │
          ▼
-Milestone 2 · Parsing and standardisation
+Milestone 2 · Parsing and standardization (parser 13.9)
   LaTeX sources of every version
     → root file and multi-file gathering → document tree (sections … sentences, formulas, figures)
-    → macros expanded, layout removed, math normalized, BibTeX extracted and deduplicated
+    → macros expanded, layout removed, math normalized, BibTeX + REVTeX extracted and deduplicated
     → element IDs shared across versions: tables elements, hierarchy, bibtex
          │
          ▼
-Milestone 3 · Citation matching                                    (next)
-  BibTeX entries ↔ crawled references, evaluated with MRR
+Milestone 3 · Reference matching & Hugging Face export
+  BibTeX entries ↔ crawled arXiv references (within-paper m × n pairs, 25 features)
+    → manual + automatic labels → 14-config ranking selection → MRR@5, NIL curve, 23/23 checks
+    → 6 sharded Parquet tables per member published on Hugging Face
 ```
 
 ## How this report is organised
@@ -126,12 +141,38 @@ Running time, maximum RAM, output size and the summary table of the required met
 
 ::::
 
+**Milestone 3 — Reference Matching**
+
+::::{grid} 1 1 2 2
+
+:::{card} [1. Overview](milestone3/overview.md)
+Task framing, statement and Q&A requirements, end-to-end pipeline, team roles and Hugging Face dataset links.
+:::
+
+:::{card} [2. Implementation](milestone3/data.md)
+Input tables (`20`), manual and automatic labelling (`21`), 25 features (`22`), models and MRR@5 (`23`),
+pipeline checks (`24`, `25`) and Hugging Face Parquet export (`26`).
+:::
+
+:::{card} [3. Label and data statistics](milestone3/statistics.ipynb)
+Eligibility and pools, the 20 manual papers, automatic matcher tuning and validation, cleaning completeness
+and per-feature AUC / MRR@5 analysis.
+:::
+
+:::{card} [4. Evaluation and analysis](milestone3/results.ipynb)
+Model selection across 14 configurations, MRR@5 (`skip` vs `zero`), saturation and NIL-detection analysis,
+23/23 requirement checks and Hugging Face export counts.
+:::
+
+::::
+
 Each milestone ends with a short conclusion ([Milestone 1](milestone1/conclusion.ipynb),
-[Milestone 2](milestone2/conclusion.ipynb)): the key results and the limitations we know of.
+[Milestone 2](milestone2/conclusion.ipynb), [Milestone 3](milestone3/conclusion.ipynb)): the key results,
+limitations and next steps.
 
 :::{note}
 Chapters 3, 4 and 5 of each milestone, and chapter 2.4 of Milestone 2, are notebooks that are **executed
-when the book is built**. Their tables, figures and the numbers in their text are computed from the log
-files stored in `data/` of the report repository; none of them is a screenshot or typed by hand. The code of
-every cell can be unfolded on the page.
+when the book is built**. Their tables, interactive Plotly figures and the numbers in their text are computed
+from the log files stored in `data/` of the report repository; none of them is a screenshot or typed by hand.
+The code of every cell can be unfolded on the page.
 :::

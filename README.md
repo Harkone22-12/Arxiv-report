@@ -5,7 +5,8 @@ Source of the report of Group 10 for the arXiv project of *Introduction to Data 
 - **Published report:** <https://harkone22-12.github.io/Arxiv-report/>
 - **Code repository:** <https://github.com/thinhelzan842/intro-ds-arxiv-project>
 - **Project statement:** <https://hcmus-cs-ta.github.io/lab-book/intro-ds/statement/crawling/>,
-  <https://hcmus-cs-ta.github.io/lab-book/intro-ds/statement/parsing/>
+  <https://hcmus-cs-ta.github.io/lab-book/intro-ds/statement/parsing/>,
+  <https://hcmus-cs-ta.github.io/lab-book/intro-ds/statement/matching/>
 
 The report is a Jupyter Book 2 (MyST) site. Chapters 3–5 of each milestone, and chapter 2.4 of Milestone 2,
 are notebooks that are **executed when the book is built**: every table, figure and number in them is
@@ -38,9 +39,21 @@ computed from the files in `data/`; nothing is a pasted screenshot.
 │   ├── performance.ipynb        4. Parser performance         (executed at build time)
 │   ├── conclusion.ipynb         5. Conclusion                 (executed at build time)
 │   └── report_data.py           loaders and table/chart helpers of the Milestone 2 notebooks
+├── milestone3/
+│   ├── overview.md              1. Overview
+│   ├── data.md                  2.1 Inputs of Milestone 3 (`20_m3_data`)
+│   ├── labeling.md              2.2 Manual and automatic labels, split (`21_labeling`)
+│   ├── features.md              2.3 Candidate pairs and features (`22_features`)
+│   ├── model.md                 2.4 Models, selection, post-processing and MRR@5 (`23_model`)
+│   ├── pipeline.md              2.5 Running the pipeline, checks and Hugging Face export (`24`–`26`)
+│   ├── statistics.ipynb         3. Label and data statistics  (executed at build time)
+│   ├── results.ipynb            4. Evaluation and analysis    (executed at build time)
+│   ├── conclusion.ipynb         5. Conclusion                 (executed at build time)
+│   └── report_data.py           loaders and table/chart helpers of the Milestone 3 notebooks
 ├── data/                        log files that the notebooks read
 ├── tools/export_report_data.py  builds the Milestone 1 files of data/ from the crawl folder
 ├── tools/export_m2_data.py      builds the Milestone 2 files of data/ from the parsing logs
+├── tools/export_m3_data.py      builds the Milestone 3 files of data/ from the M3 logs and labels
 └── .github/workflows/deploy.yml builds the book and deploys it to GitHub Pages on every push to main
 ```
 
@@ -97,6 +110,29 @@ python tools/export_m2_data.py <folder>
 | `m2_parse_status.csv` | `logs/m2_parse_status.csv` | one row per version: status, source of the references, nodes, seconds |
 | `m2_papers.csv` | `state/m2/done.jsonl` | one row per paper: versions, nodes, rows of the tables, BibTeX entries, seconds |
 | `m2_example.json` | `data/parsed/<id>.json` | the paper of the worked example of chapter 2.4 (`--example <id>` to choose another) |
+
+### Milestone 3
+
+After `src/25_run_m3.ipynb` (and `24_analysis` / `26_export_hf`), copy `logs/` and `labels/` into a local
+folder and run:
+
+```bash
+python tools/export_m3_data.py <folder>
+```
+
+| File in `data/` | Source | Content |
+|---|---|---|
+| `m3_data_summary.json` | `logs/m3_data_summary.json` | eligibility, corpus counts, pools and per-member breakdown (`20_m3_data`) |
+| `m3_labels.json` | `logs/m3_labels.json` | manual and automatic counts, tuning grid, auto-vs-manual validation (`21_labeling`) |
+| `m3_feature_report.csv` | `logs/m3_feature_report.csv` | per-feature coverage, means, AUC and single-feature MRR@5 (`22_features`) |
+| `m3_cleaning_report.csv` | `logs/m3_cleaning_report.csv` | cleaned field completeness by `bib_source` (`22_features`) |
+| `m3_metrics.json` | `logs/m3_metrics.json` | chosen model, MRR@5 (`skip`/`zero`), NIL curve, ablation and LOPO (`23_model`) |
+| `m3_model_selection.csv` | `logs/m3_model_selection.csv` | 5-fold GroupKFold CV and valid MRR@5 of all 14 configurations (`23_model`) |
+| `m3_run.json` | `logs/m3_run.json` | pipeline run history, commit, timings and exported counts (`25_run_m3`) |
+| `m3_requirements.json` | `logs/m3_requirements.json` | 23 automated statement and Q&A checks (`24_analysis`) |
+| `m3_hf_export.json` | `logs/hf_export.json` | per-member row and shard counts for all six Hugging Face Parquet tables (`26_export_hf`) |
+| `m3_split.json` | `labels/split.json` | train / valid / test publication split (seed 42) |
+| `m3_selection.csv` | `labels/selection.csv` | the 20 manually labelled publications with `bib_source` |
 
 If a file is missing, the notebooks stop with a message naming it and the build fails instead of publishing
 a broken page.

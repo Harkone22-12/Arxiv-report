@@ -12,8 +12,17 @@ by 46 offline tests in the same notebook.
 
 - **One request per version:** `https://export.arxiv.org/src/{arxiv_id}v{N}`, for `N` from 1 to the number
   of versions found by discovery. Automated downloads never go to `arxiv.org`.
-- **One connection, at least 3 s between request starts** (`ARXIV_DELAY`). Retries go through the same gate,
-  so they never break the pacing. The `User-Agent` names the project.
+- **One connection and 3 s pacing (`ARXIV_DELAY = 3.0` s).** Every arXiv request—including retries—passes
+  through a single-connection gate in the main thread so two arXiv connections are never open at once. The
+  gate spaces successive request *starts* by at least 3.0 s; combined with adaptive retry/cooldown on HTTP
+  429/5xx, short transfers wait nearly 3 s after finishing while multi-MB transfers do not add idle delay on
+  top of the transfer itself. (The instructor's Q&A recommends measuring the 3 s sleep from download
+  completion to reduce retries, while allowing flexible retry designs for both start-to-start and end-to-start
+  pacing.) All wait times and retries are counted in the reported runtime (chapter [4](performance.ipynb)).
+  The `User-Agent` names the project.
+- **Where concurrency is and is not used.** arXiv downloads never use multi-threaded HTTP requests. Worker
+  threads (`DOWNLOAD_WORKERS = 2`) handle *only* local unpacking and Google Drive writes after a response is
+  downloaded, and one separate thread queries Semantic Scholar (a different service with its own rate limit).
 - The archive is **streamed in 1 MB blocks to the runtime's local disk** (`/tmp`), not to Google Drive and
   not into memory, so a large archive costs neither RAM nor slow Drive writes.
 
@@ -24,10 +33,22 @@ different reactions:
 
 | What happens | Meaning | Reaction |
 |---|---|---|
-| HTTP 404 / 410, another 4xx | arXiv has no source for this version | not retried in this run; marked failed and asked again in the next run |
+| HTTP 404 / 410, another 4xx | arXiv has no source for this version | not retried in this run; marked failed (`NOT_FOUND`) and asked again in later runs; versions that remain HTTP 404 end as *could not be downloaded (HTTP 404)* and keep an empty record in Milestone 2 |
 | HTTP 429, 5xx, timeout, connection lost before any byte arrived | the server refused or was busy; nothing is wrong with the version | **not retried at once**: the crawl moves on and puts the version back at the end of the same run (up to 3 times, then the next run) |
 | transfer cut midway (`IncompleteRead`) | part of the archive has arrived | retried in place, asking **only for the missing bytes** |
 | empty body, or an HTML/JSON error page served with HTTP 200 | not a source | rejected; asked again in the next run |
+
+**Persistent HTTP 404 versions and unextractable archives.** Across all 27,035 versions listed by entry
+discovery, **100 versions** (across 91 papers) returned HTTP 404 (`NOT_FOUND`) from
+`export.arxiv.org/src/<id>v<n>` on every attempt across later sessions (390 logged events in total; last
+retried on 9 Nov 2026). Following the instructor's guidance (Q&A M1 #23), we do not query alternative
+sources: these versions are recorded as *could not be downloaded, HTTP 404* with no M1 receipt and are
+retained as **empty records** (`status = empty_source`, `reason = not_found`) in Milestone 2—just like
+PDF-only versions—because they represent real arXiv revisions whose source was hidden or failed to compile.
+Three additional versions (`2605.19509v1`, `2605.19844v1`, `2605.20880v1`) repeatedly returned archives that
+failed safety or integrity checks (`REJECTED_ARCHIVE` / `CORRUPT_ARCHIVE`) and are likewise carried forward
+as empty records (`not_downloaded`). The full breakdown and collapsible list of all 100 HTTP 404 versions are
+generated in [3.1](statistics.ipynb).
 
 **Refusals.** HTTP 429 is arXiv's rate limit (`Rate exceeded.`), counted per IP over a short window, and
 Colab IPs are shared with other users. Waiting on the refused version would stall the whole crawl, while the
@@ -91,9 +112,11 @@ sessions. The downloader is built so that stopping it, at any point, loses at mo
 :::{warning}
 Trusting the receipts has a cost that we met in practice. Google Drive syncs in the background, and a
 session that Colab kills can leave receipts that are synced while the files they describe are not. A check
-after the crawl found such versions; they are reported in [3.1](statistics.ipynb) and
-`src/09_repair_missing_sources.ipynb` downloads them again. The `"size"` verification mode would have caught
-them at the next start-up, at the price of a much slower start.
+on 11 Nov 2026 (`corpus_check.json`) found 1,273 such `ok` receipts across 1,104 papers
+(`2609.34965`–`2609.36365`); they are reported in [3.1](statistics.ipynb), and
+`src/09_repair_missing_sources.ipynb` re-downloaded all of them before Milestone 2 ran (Milestone 2 found 0
+`files_missing` versions). The `"size"` verification mode would have caught them at the next start-up, at
+the price of a much slower start.
 :::
 
 ## 2.2.5 Progress and logs
