@@ -78,9 +78,9 @@ configs (`papers`, `references`, `elements`, `hierarchy`, `bibtex`, `predictions
 | Member | Name | arXiv ID range | Hugging Face dataset |
 |---|---|---|---|
 | TV1 | La Anh Hào | `2603.20580` – `2603.25579` | <https://huggingface.co/datasets/Harkone2212/NMKHDL-Group10-LaAnhHao-24127361> |
-| TV2 | Võ Nguyễn Vân Anh | `2609.32834` – `2609.37833` | *[Link to be added by TV2]* |
-| TV3 | Lưu Minh Quân | `2605.17338` – `2605.22337` | *[Link to be added by TV3]* |
-| TV4 | Phạm Tấn Nhật Thịnh | `2605.07338` – `2605.12337` | *[Link to be added by TV4]* |
+| TV2 | Võ Nguyễn Vân Anh | `2609.32834` – `2609.37833` | <https://huggingface.co/datasets/jenia3003/NMKHDL-Group10-VanAnh-24127016> |
+| TV3 | Lưu Minh Quân | `2605.17338` – `2605.22337` | <https://huggingface.co/datasets/quanluuhf/NMKHDL-Group10-Quan-24127223> |
+| TV4 | Phạm Tấn Nhật Thịnh | `2605.07338` – `2605.12337` | <https://huggingface.co/datasets/thinhelzan842/NMKHDL-Group10-Thinh-24127244> |
 
 Chapter [2](data.md) details each stage of the pipeline, chapter [3](statistics.ipynb) analyses the inputs,
 labels and features, chapter [4](results.ipynb) reports model selection, MRR@5, saturation analysis,
